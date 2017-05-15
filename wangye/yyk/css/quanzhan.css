@@ -1,0 +1,447 @@
+
+.dingbu{
+	width: 100%;
+    height: 0.89rem;
+    background-color: #007be3;
+    top: 0;
+    position: fixed;
+    z-index: 1000;
+}
+.dingbu_box {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.dingbu_box1{
+    width: 20%;
+    height: 95%;
+    float: left;
+    text-align: center;
+    font-size: 0.32rem;
+    line-height: 0.89rem;
+    color: #fff;
+}
+.dingbu_box2{
+    width: 20%;
+    height: 95%;
+    float: left;
+    text-align: center;
+    font-size: 0.32rem;
+      border-bottom: 0.2rem solid #f76106;
+    line-height: 0.89rem;
+    color: #fff;
+}
+
+.banner{
+	width: 100%;
+	height: 4.21rem;
+	position: relative;
+	background: url(../img/banner1.jpg) center center no-repeat;
+	background-size: cover;
+}
+
+
+.xuanzhan{
+    width:7.18rem;
+    height:35.0439rem;
+    padding: 0.1rem 0.24rem 0;
+    background:#f3f3f3;
+
+}
+.xuanzhan .mule{
+    height: 0.62rem;
+    line-height: 0.62rem;
+    width: 100%;
+}
+.xuanzhan .mulu a {
+    color: #494747;
+    font-size: 0.22rem;
+    line-height: 0.7rem;
+    float: left;
+    margin: 0 0.14rem;
+    font-weight: bold;
+}
+.xuanzhan .mulu span {
+    float: left;
+    width: 0.16rem;
+    height: 0.2rem;
+    margin-top: 0.26rem;
+    font-size: 0.22rem;
+    text-align: center;
+    color: #494747;
+    background-size: 100%;
+    background: url(../img/uek/jiantou.png) center center no-repeat;
+    overflow: hidden;
+}
+
+.quanzhanbox{
+    width:94%;
+    height:2.3142rem;
+    background-color: #ffffff;
+    margin-bottom: 0.1rem;
+    padding:0.2rem 0.23rem 0;
+    display:flex;
+}
+.quanzhanbox .img  {
+   width:1.2444rem;
+   height:1.2444rem;
+   padding:0.28rem 0.2rem 0;
+}
+
+.quanzhanbox .img img{
+   width:1.2444rem;
+   height:1.2444rem;
+    padding:0.28rem 0.2rem 0;
+}
+
+.quanzhanbox .img p{
+    font-size: 0.24rem;
+    color: #000000;
+    text-align:center;
+    padding:0.01rem 0.01rem 0;
+}
+
+.floor{
+    width: 94%;
+    height:3.8845rem;
+    background-color: #fff;
+    margin-bottom: 0.1rem;
+    padding-left: 0.1rem;
+    padding-top: 0.3rem;
+    padding-right: 0.1rem;
+    padding:0.2rem 0.23rem 0;
+    position: relative;
+}
+.shu {
+    width: 0.08rem;
+    height: 0.34rem;
+    background-color: #01b5ff;
+    position: absolute;
+    left: 0.4rem;
+    top: 0.32rem;
+}
+.floor h2{
+    font-size: 0.28rem;
+    color: #333;
+   /* margin-bottom: 0.13rem;*/
+    padding-left:0.7rem;
+    padding-bottom:0.2rem;
+
+}
+.line {
+    width: 94%;
+    height: 0;
+    border-bottom: 2px dashed #666666;
+}
+.floor p{
+    color: #333;
+    font-size: 0.24rem;
+    line-height: 0.38rem;
+    margin-top: 0.15rem;
+}
+.floor span{
+    font-size:0.24rem;
+    color:#000;
+    padding-bottom:0.03rem;
+    width:6.5438rem;
+}
+
+
+
+.floor2{
+    width: 94%;
+    height:5.8845rem;
+    background-color: #fff;
+    margin-bottom: 0.1rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    position: relative;
+    padding-right: 0.1rem;
+    padding:0.2rem 0.23rem 0;
+}
+.floor2 h2{
+    font-size: 0.28rem;
+    color: #333;
+    margin-bottom: 0.13rem;
+    padding-left:0.7rem;
+    background:#fff;
+}
+
+.foolbiaoti{
+    width:6.3531rem;
+    height:7.062rem;
+    color: #0e86ff;
+    text-align: center;
+    font-size: 0.26rem;
+}
+
+.quxiantu{
+    width:6.3531rem;
+    height:4.0959rem;
+    background:url(../img/q_15.png)center center no-repeat;
+    overflow: hidden;
+}
+.foolbiaoti{
+    width:6.5438rem;
+    height:0.64rem;
+}
+.floor3{
+    width: 7.0888rem;
+    height:4.8261rem;
+    background-color: #fff;
+    margin-bottom: 0.1rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+      padding-left:0.3rem;
+}
+.floor3.shu {
+    width: 0.08rem;
+    height: 0.34rem;
+    background-color: #01b5ff;
+    position: absolute;
+    left: 0.4rem;
+    top: 0.32rem;
+}
+
+.floor3{
+   /* padding-left:0.3rem;*/
+    width:94%;
+    margin-top: 0.16rem;
+}
+.posts .part1 {
+    background:url(../img/q_18_18.png);
+    background-size:100%;
+    width:2.87rem;
+    height:1.06rem;
+    float: left;
+    line-height: 1.2rem;
+    color: #333;
+    text-align: center;
+    text-indent: 2em;
+    margin-left: 0.5rem;
+}
+.posts .part2 {
+   width: 2.47rem;
+    height: 1.06rem;
+}
+ .floor3 ul.posts li .part2 {
+    float: left;
+    overflow: hidden;
+    line-height: 1.2rem;
+    color: #333;
+    text-align: center;
+    text-indent: 1.5em;
+     background:url(../img/q_18_25.png)center center no-repeat;
+    background-size:100%;
+}
+.floor3 ul.posts li .part3 {
+    width: 3.05rem;
+    height: 0.97rem;
+    background:url(../img/q_18_25.png)center center no-repeat;
+    background-size:100%;
+    overflow: hidden;
+    line-height: 1.1rem;
+    color: #333;
+    margin-left: 20%;
+    text-align: center;
+    text-indent: 2.5em;
+}
+
+
+.folBOX{
+   width: 7.0888rem;
+    height:14.8052rem;
+    background:#fff;
+}
+.foolneirong{
+    margin-bottom: 0.1rem;
+    padding-left: 0.43rem;
+    padding-top: 0.3rem;
+    padding-right: 0.2rem;
+    padding-bottom: 0.3rem;
+
+}
+
+.foolneirong li{
+    height: auto;
+    overflow: hidden;
+    margin-top: 0.2rem;
+}
+.foolneirong li .l01 {
+    height: 0.84rem;
+    width: 0.84rem;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+.foolneirong li .l01 img {
+    height: 0.84rem;
+    width: 0.84rem;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.right101{
+    height: auto;
+    width:4.3rem;
+    float: left;
+    margin-left: 0.2rem;
+}
+.right101 p{
+    font-size:0.3rem;
+
+}
+
+.line1{
+    border-bottom: 1px dashed #d79115; 
+}
+.neirongg{
+color: #333;
+    font-size: 0.24rem;
+    margin-top: 0.1rem;
+}
+
+.mashan {
+     width: 100%;
+    height:3.73rem;
+    margin: 0.3rem auto;
+     position: relative;
+    
+}
+.mashan .tu {
+    height: 100%;
+    background:url(../img/about_004.png)center center no-repeat;
+     position: relative;
+}
+
+ /*结尾*/
+
+
+
+.jiewei{
+    width: 100%;
+    height: 1.2rem;
+    font-size: 0.3rem;
+    overflow: hidden;
+    margin-bottom: 0.8rem;
+}
+.shangbiao{
+    color: #666;
+    font-size: 0.2rem;
+    text-align: center;
+    padding-top: 0.18rem;
+}
+.lianxiwomen{
+    color: #666;
+    font-size: 0.2rem;
+    text-align: center;
+    padding-top: 0.1rem;
+}
+
+
+
+.dibu{
+    width: 100%;
+    height: 0.9rem;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    margin-top: 0.2rem;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    box-shadow: 0 0 0.08rem rgba(0,0,0,0.1);
+    z-index: 999;
+}
+.nr{
+    margin-top: 0.2rem;
+    background-color: background: #e7e7e7;
+    width: 100%;
+    height: 100%;
+}
+.nr a{
+    width: 33.3%;
+    height: 0.8rem;
+    float: left;
+}
+.nr_z1{
+    width: 100%;
+    height: 100%;
+    font-size: 0.24rem;
+    color: #000;
+    text-align: left;
+    background: #e7e7e7;
+    margin: 0 auto;
+}
+.nr_z1 i{
+    width: 0.32rem;
+    height: 0.32rem;
+    float: left;
+    margin-top: 0.2rem;
+    margin-left: 0.5rem;
+}
+.zi_t1{
+    background: url(../img/qq.png) center no-repeat;
+    background-size: cover;
+}
+.nr_z1 p{
+    color: #000;
+    text-align: left;
+    line-height: 0.7rem;
+    font-weight: bold;
+}
+.shixue{
+    width: 40%;
+    height: 0.9rem;
+    position: relative;
+    z-index: 99999;
+    box-shadow: 0 0 0.08rem rgba(255,126,0,0.1);
+    margin-top: -0.1rem;
+}
+.nr_z2{
+    background-color: #ff8d12;
+    border-radius: 0.08rem;
+    box-shadow: 0px 0px 0.15rem #ff8d12;
+    width: 100%;
+    height: 100%;
+    
+}
+.nr_z2 p{
+    display: inline-block;
+    font-size: 0.3rem;
+    line-height: 0.8rem;
+    color: #fff;
+    float: left;
+    text-align: center;
+    font-weight: bold;
+}
+.zi_t2{
+    width: 0.36rem;
+    height: 0.36rem;
+    background:url(../img/shouye6.png) -1.6rem -4.78rem no-repeat;
+    background-size: 2rem;
+    display: inline-block;
+    margin-left: 0.42rem;
+    margin-right: 0.08rem;
+    float: left;
+    margin-top: 0.2rem;
+}
+.zi_t3{
+    width: 0.36rem;
+    height: 0.36rem;
+    background: url(../img/shouye6.png) -1.62rem -5.3rem no-repeat;
+    background-size: 2rem;
+    display: inline-block;
+    margin-left: 0.42rem;
+    margin-right: 0.08rem;
+    position: relative;
+}
+
+
+ .clear:after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    clear: both;
+}

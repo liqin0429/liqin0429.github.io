@@ -1,0 +1,39 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+html{
+	color:#666;
+}
+body{
+	background: #fff;
+	font-size: 12px;
+	font-family: 微软雅黑;
+	font-style:normal;
+	font-weight:400;
+}
+*{
+	margin: 0;
+	padding: 0;
+	list-style:none;
+}
+a{
+	text-decoration:none;
+	color:none;
+}
+ul{
+	margin: 0;
+    padding: 0;
+}
+ul li{
+	list-style-type: circle;
+	list-style: none;
+}
+a:hover{
+	color:#e5004f
+}
+em, th, var, optgroup {
+    font-style: normal;
+    font-weight: 400;
+}

@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="GBK">
+	<title>右侧导航</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		user-select:none;
+	}
+	.container{
+		width: 230px;
+		height: 100%;
+		position: fixed;
+		background-color: #2b2f3e;
+		left: 0;
+		top: 0;
+
+	}
+	.first{
+		width: 230px;
+		height: auto;
+		overflow: hidden;
+	}
+	.first>li{
+		width:230px;
+		height: auto; 
+	}
+	.first>li>a{
+		font-size: 16px;
+		display: block;
+		width: 200px;
+		height: 32px;
+		padding-left: 30px;
+		line-height: 32px;
+		color: #ccc;
+		text-decoration: none;
+		border-top: 1px solid rgba(0,0,0,0.5);
+		border-bottom: 1px solid rgba(0,0,0,0.5)
+	}
+	.first .second{
+		width: 320px;
+		height: auto;
+		overflow: hidden;
+		display: none;
+	}
+	.first .second li{
+		width: 320px;
+		height: 27px;
+		padding-left: 20px;
+		
+		font-size: 12px;
+		cursor: pointer;
+		line-height: 27px;
+	}
+	.first>li>a.active{
+		background-color: #ff404b;
+		color: #fff;
+	}
+	/*.first>li>a.active+ul{
+		display: block;
+	}*/
+	.second li.active{
+		border-left: 5px solid #dedede;
+		
+		width: 295px;	
+	}
+    .second li a{
+        display: block;
+        text-decoration:none;
+        color: #888;
+    }
+	.scroll{
+		width: 1px;
+		height: 100%;
+		background-color: rgba(255,255,255,0.5);
+		position: absolute;
+		right: 10px;
+		top: 0;
+		display: none;
+	}
+	.scroll .control{
+		width: 15px;
+		height: 15px;
+		border-radius: 50%;
+		background-color: rgba(255,255,255,0.8);
+		position: absolute;
+		left:-7px;
+		top:0;
+		cursor: pointer;
+	}
+	</style>
+</head>
+<body>
+<div class="container">
+	<ul class="first">
+	   <li>
+        <a href="#"  class="active">DASHBOARD</a>
+        </li>
+     <li>
+        <a href="#">核心</a>
+        <ul class="second">
+            <li class="active" style="border-left: 5px solid #dedede;width: 295px;height: 27px;"><a href="#">jQuery([sel,[context]])</a></li>
+            <li><a href="#">jQuery(html,[ownerDoc])</a></li>
+            <li><a href="#">jQuery(callback)</a></li>
+            <li><a href="#">jQuery.holdReady(hold) </a></li>
+            <li><a href="#">each(callback)</a></li>
+            <li><a href="#">size()</a></li>
+            <li><a href="#">length</a></li>
+            <li><a href="#">selector</a></li>
+            <li><a href="#">context</a></li>
+            <li><a href="#">get([index])</a></li>
+            <li><a href="#">index([selector|element])</a></li>
+            <li><a href="#">data([key],[value])</a></li>
+            <li><a href="#">removeData([name|list])</a></li>
+            <li><a href="#"><del>$.data(ele,[key],[val])</del></a></li>
+            <li><a href="#">queue(e,[q])</a></li>
+            <li><a href="#">dequeue([queueName])</a></li>
+            <li><a href="#">clearQueue([queueName])</a></li>
+            <li><a href="#">jQuery.fn.extend(object)</a></li>
+            <li><a href="#">jQuery.noConflict([ex])</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#">选择器</a>
+        <ul class="second">
+            <li><a href="#">#id</a></li>
+            <li><a href="#">element</a></li>
+            <li><a href="#">.class</a></li>
+            <li><a href="#">selector1,selector2,selectorN</a></li>
+            <li><a href="#">ancestor descendant</a></li>
+            <li><a href="#">parent > child</a></li>
+            <li><a href="#">prev + next</a></li>
+            <li><a href="#">prev ~ siblings</a></li>
+            <li><a href="#">:first</a></li>
+            <li><a href="#">:not(selector)</a></li>
+            <li><a href="#">:even</a></li>
+            <li><a href="#">:odd</a></li>
+            <li><a href="#">:eq(index)</a></li>
+            <li><a href="#">:gt(index)</a></li>
+            <li><a href="#">:lang</a></li>
+            <li><a href="#">:last</a></li>
+            <li><a href="#">:lt(index)</a></li>
+            <li><a href="#">:header</a></li>
+            <li><a href="#">:animated</a></li>
+            <li><a href="#">:focus</a></li>
+            <li><a href="#">:root</a></li>
+            <li><a href="#">:target</a></li>
+            <li><a href="#">:contains(text)</a></li>
+            <li><a href="#">:empty</a></li>
+            <li><a href="#">:has(selector)</a></li>
+            <li><a href="#">:parent</a></li>
+            <li><a href="#">:hidden</a></li>
+            <li><a href="#">:visible</a></li>
+            <li><a href="#">[attribute]</a></li>
+            <li><a href="#">[attribute=value]</a></li>
+            <li><a href="#">[attribute!=value]</a></li>
+            <li><a href="#">[attribute^=value]</a></li>
+            <li><a href="#">[attribute$=value]</a></li>
+            <li><a href="#">[attribute*=value]</a></li>
+            <li><a href="#">[attrSel1][attrSel2][attrSelN]</a></li>
+            <li><a href="#">:first-child</a></li>
+            <li><a href="#">:first-of-type</a></li>
+            <li><a href="#">:last-child</a></li>
+            <li><a href="#">:last-of-type</a></li>
+            <li><a href="#">:nth-child</a></li>
+            <li><a href="#">:nth-last-child</a></li>
+            <li><a href="#">:nth-last-of-type</a></li>
+            <li><a href="#">:nth-of-type</a></li>
+            <li><a href="#">:only-child</a></li>
+            <li><a href="#">:only-of-type</a></li>
+            <li><a href="#">:input</a></li>
+            <li><a href="#">:text</a></li>
+            <li><a href="#">:password</a></li>
+            <li><a href="#">:radio</a></li>
+            <li><a href="#">:password</a></li>
+            <li><a href="#">:checkbox</a></li>
+            <li><a href="#">:submit</a></li>
+            <li><a href="#">:image</a></li>
+            <li><a href="#">:reset</a></li>
+            <li><a href="#">:button</a></li>
+            <li><a href="#">:file</a></li>
+            <li><a href="#">:enabled</a></li>
+            <li><a href="#">:disabled</a></li>
+            <li><a href="#">:checked</a></li>
+            <li><a href="#">:selected</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#">AJAS</a>
+        <ul class="second">
+            <li><a href="#">$.ajax(url,[settings])</a></li>
+            <li><a href="#">load(url,[data],[callback])</a></li>
+            <li><a href="#">$.get(url,[data],[fn],[type])</a></li>
+            <li><a href="#">$.getJSON(url,[data],[fn])</a></li>
+            <li><a href="#">$.getScript(url,[callback])</a></li>
+            <li><a href="#">$.post(url,[data],[fn],[type])</a></li>
+            <li><a href="#">ajaxComplete(callback)</a></li>
+            <li><a href="#">ajaxError(callback)</a></li>
+            <li><a href="#">ajaxSend(callback)</a></li>
+            <li><a href="#">ajaxStart(callback)</a></li>
+            <li><a href="#">ajaxStop(callback)</a></li>
+            <li><a href="#">ajaxSuccess(callback)</a></li>
+            <li><a href="#">$.ajaxPrefilter([type],fn)</a></li>
+            <li><a href="#">$.ajaxSetup([options])</a></li>
+            <li><a href="#">serialize()</a></li>
+            <li><a href="#">serializeArray()</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#">属性</a>
+        <ul class="second">
+            <li><a href="#">attr(name|pro|key,val|fn)</a></li>
+            <li><a href="#">removeAttr(name)</a></li>
+            <li><a href="#">prop(n|p|k,v|fn)</a></li>
+            <li><a href="#">removeProp(name)</a></li>
+            <li><a href="#">addClass(class|fn)</a></li>
+            <li><a href="#">removeClass([class|fn])</a></li>
+            <li><a href="#">toggleClass(class|fn[,sw])</a></li>
+            <li><a href="#">html([val|fn])</a></li>
+            <li><a href="#">text([val|fn])</a></li>
+            <li><a href="#">val([val|fn|arr])</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#">CSS</a>
+        <ul class="second">
+            <li><a href="#">css(name|pro|[,val|fn])</a></li>
+            <li><a href="#">jQuery.cssHooks</a></li>
+            <li><a href="#">offset([coordinates])</a></li>
+            <li><a href="#">position()</a></li>
+            <li><a href="#">scrollTop([val])</a></li>
+            <li><a href="#">scrollLeft([val])</a></li>
+            <li><a href="#">height([val|fn])</a></li>
+            <li><a href="#">width([val|fn])</a></li>
+            <li><a href="#">innerHeight()</a></li>
+            <li><a href="#">innerWidth()</a></li>
+            <li><a href="#">outerHeight([options])</a></li>
+            <li><a href="#">outerWidth([options])</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#">文档处理</a>
+        <ul class="second">
+            <li><a href="#">append(content|fn)</a></li>
+            <li><a href="#">appendTo(content)</a></li>
+            <li><a href="#">prepend(content)</a></li>
+            <li><a href="#">prependTo(content)</a></li>
+            <li><a href="#">after(content|fn)</a></li>
+            <li><a href="#">before(content|fn)</a></li>
+            <li><a href="#">insertAfter(content)</a></li>
+            <li><a href="#">wrap(html|element|fn)</a></li>
+            <li><a href="#">unwrap()</a></li>
+            <li><a href="#">wrapAll(html|ele)</a></li>
+            <li><a href="#">wrapInner(htm|ele|fn)</a></li>
+            <li><a href="#">replaceWith(content|fn)</a></li>
+            <li><a href="#">replaceAll(selector)</a></li>
+            <li><a href="#">empty()</a></li>
+            <li><a href="#">remove([expr])</a></li>
+            <li><a href="#">detach([expr])</a></li>
+            <li><a href="#">clone([Even[,deepEven]])</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#">筛选</a>
+        <ul class="second">
+            <li><a href="#">eq(index|-index)</a></li>
+            <li><a href="#">first()</a></li>
+            <li><a href="#">last()</a></li>
+            <li><a href="#">hasClass(class)</a></li>
+            <li><a href="#">filter(expr|obj|ele|fn)</a></li>
+            <li><a href="#">is(expr|obj|ele|fn)</a></li>
+            <li><a href="#">map(callback)</a></li>
+            <li><a href="#">has(expr|ele)</a></li>
+            <li><a href="#">not(expr|ele|fn)</a></li>
+            <li><a href="#">slice(start,[end])</a></li>
+            <li><a href="#">children([expr])</a></li>
+            <li><a href="#">closest(e|o|e)</a></li>
+            <li><a href="#">find(e|o|e)</a></li>
+            <li><a href="#">next([expr])</a></li>
+            <li><a href="#">nextAll([expr])</a></li>
+            <li><a href="#">nextUntil([e|e][,f])</a></li>
+            <li><a href="#">offsetParent()</a></li>
+            <li><a href="#">parent([expr])</a></li>
+            <li><a href="#">parents([expr])</a></li>
+            <li><a href="#">parentsUntil([e|e][,f])</a></li>
+            <li><a href="#">prev([expr])</a></li>
+            <li><a href="#">prevall([expr])</a></li>
+            <li><a href="#">prevUntil([e|e][,f])</a></li>
+            <li><a href="#">siblings([expr])</a></li>
+            <li><a href="#">add(e|e|h|o[,c])</a></li>
+            <li><a href="#"><del>andSelf()</del></a></li>
+            <li><a href="#">addBack()</a></li>
+            <li><a href="#">contents()</a></li>
+            <li><a href="#">end()</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#">事件</a>
+        <ul class="second">
+            <li><a href="#">ready(fn)</li>
+            <li><a href="#">on(eve,[sel],[data],fn)</a></li>
+            <li><a href="#">off(eve,[sel],[fn])</a></li>
+            <li><a href="#">bind(type,[data],fn)</a></li>
+            <li><a href="#">one(type,[data],fn)</a></li>
+            <li><a href="#">trigger(type,[data])</a></li>
+            <li><a href="#">triggerHandler(type,[data])</a></li>
+            <li><a href="#">unbind(t,[d|f])</a></li>
+            <li><a href="#"><del>live(type,[data],fn)</del></a></li>
+            <li><a href="#"><del>die(type,[fn])</del></a></li>
+            <li><a href="#">delegate(s,[t],[d],fn)</a></li>
+            <li><a href="#">undelegate([s,[t],fn])</a></li>
+            <li><a href="#">hover([over,]out)</a></li>
+            <li><a href="#">toggle([spe],[eas],[fn])</a></li>
+            <li><a href="#">blur([[data],fn])</a></li>
+            <li><a href="#">change([[data],fn])</a></li>
+            <li><a href="#">click([[data],fn])</a></li>
+            <li><a href="#">dblclick([[data],fn])</a></li>
+            <li><a href="#">error([[data],fn])</a></li>
+            <li><a href="#">focus([[data],fn])</a></li>
+            <li><a href="#">focusin([data],fn)</a></li>
+            <li><a href="#">focusout([data],fn)</a></li>
+            <li><a href="#">keydown([[data],fn])</a></li>
+            <li><a href="#">keypress([[data],fn])</a></li>
+            <li><a href="#">keyup([[data],fn])</a></li>
+            <li><a href="#">mousedown([[data],fn])</a></li>
+            <li><a href="#">mouseenter([[data],fn])</a></li>
+            <li><a href="#">mouseleave([[data],fn])</a></li>
+            <li><a href="#">mousemove([[data],fn])</a></li>
+            <li><a href="#">mouseout([[data],fn])</a></li>
+            <li><a href="#">mouseover([[data],fn])</a></li>
+            <li><a href="#">mouseup([[data],fn])</a></li>
+            <li><a href="#">resize([[data],fn])</a></li>
+            <li><a href="#">scroll([[data],fn])</a></li>
+            <li><a href="#">select([[data],fn])</a></li>
+            <li><a href="#">submit([[data],fn])</a></li>
+            <li><a href="#">unload([[data],fn])</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#">效果</a>
+        <ul class="second">
+            <li><a href="#">show([s,[e],[fn]])</a></li>
+            <li><a href="#">hide([s,[e],[fn]])</a></li>
+            <li><a href="#">toggle([s],[e],[fn])</a></li>
+            <li><a href="#">bind(type,[data],fn)</a></li>
+            <li><a href="#">slideDown([s],[e],[fn])</a></li>
+            <li><a href="#">slideUp([s,[e],[fn]])</a></li>
+            <li><a href="#">slideToggle([s],[e],[fn])</a></li>
+            <li><a href="#">fadeIn([s],[e],[fn])</a></li>
+            <li><a href="#">fadeOut([s],[e],[fn])</a></li>
+            <li><a href="#">fadeTo([[s],o,[e],[fn]])</a></li>
+            <li><a href="#">fadeToggle([s,[e],[fn]])</a></li>
+            <li><a href="#">animate(p,[s],[e],[fn])</a></li>
+            <li><a href="#">stop([c],[j])</a></li>
+            <li><a href="#">delay(d,[q])</a></li>
+            <li><a href="#">finish([queue])</a></li>
+            <li><a href="#">jQuery.fx.off</a></li>
+            <li><a href="#">jQuery.fx.interval</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#">工具</a>
+        <ul class="second">
+            <li><a href="#">$.support</li>
+            <li><a href="#"><del>$.browser</del></a></li>
+            <li><a href="#">$.browser.version</a></li>
+            <li><a href="#"><del>$.boxModel</del></a></li>
+            <li><a href="#">$.each(object,[callback])</a></li>
+            <li><a href="#">$.extend([d],tgt,obj1,[objN])</a></li>
+            <li><a href="#">$.grep(array,fn,[invert])</a></li>
+            <li><a href="#"><del>$.sub()</del></a></li>
+            <li><a href="#">$.when(deferreds)</a></li>
+            <li><a href="#">$.makeArray(obj)</a></li>
+            <li><a href="#">$.map(arr|obj,callback)</a></li>
+            <li><a href="#">$.inArray(val,arr,[from])</a></li>
+            <li><a href="#">$.toArray()</a></li>
+            <li><a href="#">$.merge(first,second)</a></li>
+            <li><a href="#">$.unique(array)</a></li>
+            <li><a href="#">$.parseJSON(json)</a></li>
+            <li><a href="#">$.parseXML(data)</a></li>
+            <li><a href="#">$.noop</a></li>
+            <li><a href="#">$.proxy(function,context)</a></li>
+            <li><a href="#">$.contains(c,c)</a></li>
+            <li><a href="#">$.type(obj)</a></li>
+            <li><a href="#">$.isarray(obj)</a></li>
+            <li><a href="#">$.isFunction(obj)</a></li>
+            <li><a href="#">$.isEmptyObject(obj)</a></li>
+            <li><a href="#">$.isPlainObject(obj)</a></li>
+            <li><a href="#">$.isWindow(obj)</a></li>
+            <li><a href="#">$.isNumeric(value)</a></li>
+            <li><a href="#">$.trim(str)</a></li>
+            <li><a href="#">$.param(obj,[traditional])</a></li>
+            <li><a href="#">$.error(message)</a></li>
+            <li><a href="#">$.fn.jquery</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#">事件对象</a>
+        <ul class="second">
+            <li><a href="#">event.currentTarget</a></li>
+            <li><a href="#">def.fail(failCallbacks)</a></li>
+            <li><a href="#"><del>def.isRejected()</del></a></li>
+            <li><a href="#"><del>def.isResolved()</del></a></li>
+            <li><a href="#">def.reject(args)</a></li>
+            <li><a href="#">def.rejectWith(c,[a])</a></li>
+            <li><a href="#">def.resolve(args)</a></li>
+            <li><a href="#">def.resolveWith(c,[a])</a></li>
+            <li><a href="#">def.then(d[,f] [,p])</a></li>
+            <li><a href="#">def.promise([ty],[ta])</a></li>
+            <li><a href="#">def.pipe([d],[f],[p])</a></li>
+            <li><a href="#">def.always(al,[al])</a></li>
+            <li><a href="#">def.notify(args)</a></li>
+            <li><a href="#">def.notifyWith(context,[args])</a></li>
+            <li><a href="#">def.progress(proCal)</a></li>
+            <li><a href="#">def.state()</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#">延迟对象</a>
+        <ul class="second">        
+            <li><a href="#">def.done(d[d])</a></li>
+            <li><a href="#">def.fail(failCallbacks)</a></li>
+            <li><a href="#"><del>def.isRejected()</del></a></li>
+            <li><a href="#"><del>def.isResolved()</del></a></li>
+            <li><a href="#">def.reject(args)</a></li>
+            <li><a href="#">def.rejectWith(c,[a])</a></li>
+            <li><a href="#">def.resolve(args)</a></li>
+            <li><a href="#">def.resolveWith(c,[a])</a></li>
+            <li><a href="#">def.then(d[,f] [,p])</a></li>
+            <li><a href="#">def.promise([ty],[ta])</a></li>
+            <li><a href="#">def.pipe([d],[f],[p])</a></li>
+            <li><a href="#">def.always(al,[al])</a></li>
+            <li><a href="#">def.notify(args)</a></li>
+            <li><a href="#">def.notifyWith(context,[args])</a></li>
+            <li><a href="#">def.progress(proCal)</a></li>
+            <li><a href="#">def.state()</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#">回调函数</a>
+        <ul class="second">
+            <li><a href="#">cal.add(callbacks)</a></li>
+            <li><a href="#">cal.disable()</a></li>
+            <li><a href="#">cal.empty()</a></li>
+            <li><a href="#">cal.fire(arguments)</a></li>
+            <li><a href="#">cal.fired()</a></li>
+            <li><a href="#">cal.fireWith([context][,args])</a></li>
+            <li><a href="#">cal.has(callback)</a></li>
+            <li><a href="#">cal.lock()</a></li>
+            <li><a href="#">cal.locked()</a></li>
+            <li><a href="#">cal.remove(callbacks)</a></li>
+            <li><a href="#">$callbacks(flags)</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#">其他</a>
+        <ul class="second">
+            <li><a href="#">正则表达式</a></li>
+            <li><a href="#">HTML5速查表</a></li>
+            <li><a href="#">源码下载</a></li>
+       	 </ul>
+   	 </li>
+	</ul>
+	<div class="scroll">
+		<div class="control"></div>
+	</div>
+</div>
+<script type="text/javascript" src="jQuery.js"></script>
+<script type="text/javascript">
+	$(function(){
+        var my=0,moveY=0;
+        var cha;
+		$(".first>li>a").click(function(){
+
+			$(".first>li>a").not(this).removeClass("active").next().slideUp()
+			$(this).toggleClass("active").next().slideToggle(300).queue(function(){
+			if($(".first").height()>$(".container").height()){
+                cha=$(".first").height()-$(".container").height()
+				$(".scroll").show();
+                $(".control").css("top",0);
+                $(".first").css("margin-top",0);
+                moveY=0;
+			}else{
+				$(".scroll").hide();
+                $(".control").css("top",0);
+                $(".first").css("margin-top",0);
+                moveY=0;
+			}
+            
+			$(this).dequeue();
+			});
+			
+		}).hover(function(){
+			$(this).css({background:"#ff404b",color:"#fff"})
+		},function(){
+			$(this).css({background:"",color:""})
+		});
+		$(".second li a").click(function(){
+			$(this).css({color:"#fff"}).parent().removeClass("active").css({borderLeft:"5px solid #dedede",width:295}).siblings().css({borderLeft:"",width:300})
+		}).hover(function(){
+			$(this).css({color:"#fff"}).parent().addClass("active")
+		},function(){
+			$(this).css({color:"#888"}).parent().removeClass("active")
+		})
+		
+		//moveY 保存的是在下一次拖拽之前的TOP值
+		// my 每次拖拽移动的距离
+		$(".control").mousedown(function(e){
+			e.preventDefault();
+			var sy=e.clientY;
+			$(document).on("mousemove",move)
+			function move(e){
+				var ny=e.clientY;
+				my=ny-sy;
+				var maxtop=$(".scroll").height()-$(".control").height();
+				if(my+moveY<0){
+					my=-moveY;
+				}
+				if(my+moveY>maxtop){
+					my=$(".scroll").height()-$(".control").height()-moveY;
+				}
+                var mt=(my+moveY)/maxtop*cha;
+                $(".first").css("margin-top",-mt)
+				$(".control").css("top",my+moveY)
+			}
+			$(document).on("mouseup",up)
+			function up(){
+				moveY+=my;
+				$(document).off("mousemove",move).off("mouseup",up);
+			}
+		})
+
+	})
+</script>
+</body>
+</html>

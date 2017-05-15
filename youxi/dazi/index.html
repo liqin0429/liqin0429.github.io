@@ -1,0 +1,907 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>打字游戏 </title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        @keyframes move {
+            0% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(-30px);
+            }
+            50% {
+                transform: translateX(0px);
+            }
+            75% {
+                transform: translateX(30px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        body {
+            margin: 0;
+            text-align: center;
+            font-family: "微软雅黑";
+
+            background-size: 100% 100%;
+            overflow: hidden;
+        }
+
+        * {
+            user-select: none;
+        }
+
+        .scene {
+            width: 1000px;
+            height: 100%;
+            margin: 0 auto;
+        }
+
+        .main {
+            width: 800px;
+            height: 100%;
+            /*background: #b1ff28;*/
+            position: relative;
+            float: left;
+            background-image: url(bg.png);
+        }
+
+        .control {
+            width: 200px;
+            height: 100%;
+            background: rgba(66, 255, 197, 0.5);
+            float: left;
+            justify-content: space-around;
+        }
+
+        .box {
+            width: 80%;
+            height: 50px;
+            background: #ffb999;
+            border-radius: 10px;
+            margin: 15px auto;
+            text-align: match-parent;
+            align-self: space-around;
+        }
+
+        .box .name {
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            margin-left: 35PX;
+           margin-top: 37px;
+        }
+
+        .state {
+            height: 30px;
+            color: #fff;
+            width: 80%;
+            background-size: 100%;
+        }
+
+        .state span {
+            color: #fff;
+            text-align: center;
+            top: 4px;
+            position: relative;
+            left: 13px;
+        }
+
+        .scor, .lift, .gaofen{
+            height: 30px;
+            /*height: 80%;*/
+            width: 80%;
+            margin: 0 auto;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 20px;
+            color: #fff;
+        }
+        .maxscore{
+            height: 30px;
+            /*height: 80%;*/
+            width: 80%;
+            margin: 0 auto;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 20px;
+            line-height: 50px;
+            color: #e80f0f;
+            font-size: 27px;
+            margin-left: 106px;
+                top: 194px;
+                position: absolute;
+        }
+        .letter {
+            width: 80px;
+            height: 80px;
+            /*border: 1px solid red;*/
+            /*line-height: 80px;*/
+            /*text-align: center;*/
+            /*font-size: 20px;*/
+            /*color: #3333ff;*/
+            position: absolute;
+            /*font-weight: bold;*/
+            cursor: pointer;
+            background-size: 100% 100%;
+            /*transition: all 1s;*/
+        }
+
+        .kaishi {
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 23px;
+        }
+
+        .box:hover {
+
+        }
+
+        .box:hover {
+            box-shadow: 0 0 7px #fff;
+            /*transition: sclie(0,0,0.1);*/
+        }
+
+        .btn {
+            width: 80%;
+            height: 30px;
+            background: #fec642;
+            border-radius: 5px;
+            color: #fff;
+            line-height: 30px;
+            font-size: 20px;
+            margin: 30px auto;
+            text-align: center;
+            box-shadow: 0 0 7px #fff;
+            cursor: pointer;
+        }
+
+        .startbox {
+            width: 900px;
+            height: 400px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            animation: move 3s linear infinite;
+        }
+
+        .top {
+            width: 710px;
+            height: 250px;
+            background: url(logo.png) no-repeat center;
+        }
+
+        .bottom {
+            width: 710px;
+            height: 150px;
+        }
+
+        .choose {
+            width: 340px;
+            height: 100px;
+            float: left;
+            margin-top: 50px;
+            margin-right: 30px;
+            cursor: pointer;
+            background: url(choose.png) no-repeat center;
+            transition: all 1s;
+        }
+
+        .choose:hover {
+            transform: scale(1.1);
+        }
+
+        .start {
+            width: 340px;
+            height: 100px;
+            float: left;
+            margin-top: 50px;
+            cursor: pointer;
+            background: url(start.png) no-repeat center;
+            transition: all 1s;
+        }
+
+        .start:hover {
+            transform: scale(1.1);
+        }
+
+        .music {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: url(music.png) no-repeat center;
+            position: absolute;
+            right: 345px;
+            top: -7px;
+            z-index: 9999;
+            background-color: #FEC743;
+            border: 3px solid #fff;
+            animation: rotate 3s linear infinite;
+            cursor: pointer;
+        }
+
+        .difficult {
+            width: 839px;
+            height: 402px;
+            background: url(difficult.png) no-repeat;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            display: none;
+        }
+
+        .choosebox {
+            width: 100%;
+            height: 93px;
+            margin-top: 200px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .choosebox div {
+            width: 214px;
+            height: 93px;
+            cursor: pointer;
+            transition: all .5s;
+        }
+
+        .choosebox div:hover {
+            transform: scale(1.1);
+        }
+
+        .easy {
+            background: url(easy.png) no-repeat center;
+        }
+
+        .medium {
+            background: url(medium.png) no-repeat center;
+            box-shadow: 0 0 5px red;
+        }
+
+        .hard {
+            background: url(hard.png) no-repeat center;
+        }
+
+        .back {
+            width: 110px;
+            height: 110px;
+            background: url(quit.png);
+            margin: 15px auto;
+            cursor: pointer;
+            transition: all 1s;
+        }
+
+        .back:hover {
+            transform: rotate(360deg);
+        }
+
+        .mask2 {
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: none;
+            z-index: 99;
+        }
+
+        .mask, .mask2 {
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: none;
+            z-index: 99;
+        }
+
+        .overbox {
+            width: 484px;
+            height: 419px;
+            background: url(over.png) no-repeat center;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        .score {
+            width: 100px;
+            height: 40px;
+            margin-left: 250px;
+            margin-top: 150px;
+            line-height: 40px;
+        }
+
+        .btns {
+            width: 250px;
+            height: 93px;
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+
+        .restart {
+            width: 93px;
+            height: 93px;
+            background: url(restart.png);
+            float: left;
+            cursor: pointer;
+            transition: all 1s;
+        }
+
+        .restart:hover {
+            transform: rotate(360deg);
+        }
+
+        .quit {
+            width: 93px;
+            height: 93px;
+            background: url(quit.png);
+            float: right;
+            cursor: pointer;
+            background-size: 100% 100%;
+            transition: all 1s;
+        }
+
+        .quit:hover {
+            transform: translateX(-30px);
+        }
+
+        .stopbox {
+            width: 470px;
+            height: 220px;
+            background: url(stopbox.png);
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+        }
+
+        .continue {
+            width: 93px;
+            height: 93px;
+            background: url(continue.png);
+            margin-bottom: 30px;
+            cursor: pointer;
+            transition: all 1s;
+        }
+
+        .continue:hover {
+            transform: scale(1.1);
+        }
+
+        .stop-restart {
+            width: 93px;
+            height: 93px;
+            background: url(restart.png);
+            margin-bottom: 30px;
+            cursor: pointer;
+            transition: all 1s;
+        }
+        .stop-restart:hover {
+            transform: rotate(360deg);
+        }
+
+        .stop-quit {
+            width: 93px;
+            height: 93px;
+            background: url(quit.png);
+            background-size: 100% 100%;
+            margin-bottom: 30px;
+            cursor: pointer;
+            transition: all 1s;
+        }
+
+        .stop-quit:hover {
+            transform: translateX(-30px);
+        }
+        .fenshuhe{
+            background-image: url("img/scor.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+         .lifeimg{
+            background-image: url("img/life.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+        .lifeimg .life{
+            line-height: 19px;
+            color: #000!important;
+        }
+      
+        .paiban{
+             width: 184px;
+            height: 300px;
+            background: #f1f1f5;
+            border: 1px solid #f1f1f1;
+            position: absolute;
+            left: -43%;
+            top: 84px;
+            color: red;
+            font-size: 20px;
+            display: none;    
+        }
+        .paihang{
+            height: 150px;
+            background: #e6cccc;
+            left: 0;
+           position: relative;
+        }
+        .paihang {
+            font-size: 16px;
+            line-height: 24px;
+            text-align: center;
+            /* font-weight: bold; */
+        }
+
+    </style>
+</head>
+<body>
+<div class="music"></div>
+<div class="scene">
+    <div class="main">
+    </div>
+    <div class="startbox">
+        <div class="top"></div>
+        <div class="bottom">
+            <div class="choose"></div>
+            <div class="start"></div>
+        </div>
+    </div>
+    <div class="difficult">
+        <div class="choosebox">
+            <div class="easy"></div>
+            <div class="medium"></div>
+            <div class="hard"></div>
+        </div>
+        <div class="back"></div>
+    </div>
+    <div class="mask">
+        <div class="overbox">
+            <div class="score">0</div>
+            <div class="bestscor">0</div>
+                 <div class="nowscore">0</div>
+                <div class="zuigaofen"></div>
+                <div class="maxscore">0</div>
+            <div class="btns">
+                <div class="restart"></div>
+                <div class="quit"></div>
+            </div>
+        </div>
+    </div>
+    <div class="mask2">
+        <div class="stopbox">
+            <div class="continue"></div>
+            <div class="stop-restart"></div>
+            <div class="stop-quit"></div>
+        </div>
+    </div>
+    <div class="control">
+        <div class="box fenshuhe">
+            <div class="name">关卡</div>
+            <div class="state"><span>1</span></div>
+        </div>
+        <div class="box fenshuhe ">
+            <div class="name">得分</div>
+            <div class="scor">0</div>
+        </div>
+        <div class="box lifeimg">
+            <div class="name ">生命值</div>
+            <div class="lift">5</div>
+        </div>
+        <!-- <div class="btn start"> 开始游戏</div> -->
+        <div class="btn pause"> 暂停</div>
+
+          <div class="box paihang">
+        <span>排行榜</span>
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
+    </div>
+  
+    </div>
+    
+</div>
+</body>
+<script>
+    //    面向过程
+    //    //创建字母
+    //            var main = document.querySelector(".main")
+    //        var num = 5;  //出现字母盒子的数量
+    //        var obj = {}; //创建一个对象
+    //        function creatLetter() {
+    //            var div = document.createElement("div")
+    //            div.className = "letter";  //为div增加样式  className 属性设置或返回元素的 class 属性。
+    //            //创建键盘字母
+    //            do {
+    //                var rn = Math.floor(Math.random() * 26 + 65)  //取一个随机数字向下取整
+    //                var le = String.fromCharCode(rn);  //把随机数转化为字母A-Z
+    //            } while (obj[le]);    //判断obj是否有这个属性
+    //             div.innerHTML = le;  //添加到新创建的盒子中
+    //            // 让盒子的左右位置随机变化
+    //            do {
+    //                var rl = Math.random()*720;  //盒子宽度为800-80 在720位置值之间产生一个随机数
+    //            } while (check(rl));
+    //             div.style.left = rl + "px"
+    //            // 让盒子的上下位置随机变化
+    //            var rt = -Math.random() * 100;   //0-100随机数  负值是让其回到项部不让其看见
+    //            div.style.top = rt + "px";
+    //            obj[le] = {left:rl,top:rt,el:div};  //确保字母不重复   left:对象rl,top:对象rt,el:对象div
+    //            //将创建的盒子放入main中
+    //            main.appendChild(div);
+    //        }
+    //        function play() {
+    //            for (var i = 0; i < num; i++) {
+    //                creatLetter()
+    //            }
+    //        }
+    //    //    检查位置是否重复
+    //        function check(left) {  //判断当前传进的left与之前是否重复
+    //            for (var i in obj) {
+    //                if (left > obj[i].left - 80 && left < obj[i].left + 80) {
+    //                    return true  //{"A":{left:10}
+    //                }
+    //            }
+    //        }
+    //        play();
+    //        setInterval(function () {
+    //            for(var i in obj){
+    //                var t =obj[i].top;
+    //                t+=5;
+    //                obj[i].top=t;
+    //                obj[i].el.style.top=t+"px";
+    //            }
+    //        },50)
+    //        document.onkeydown=function (e) {
+    //            var keycode=e.keyCode;
+    //            var l=String.fromCharCode(keycode)   //按下后显示当前字母
+    //            if(obj[l]){
+    //                main.removeChild(obj[l].el);   //从页面中删除
+    //                delete obj[l];          //从属性中删除
+    //                creatLetter();   //创建一个新的字母
+    //            }
+    //        }
+
+    // 面向对象  封装  创建一个类   this是函数的对象     谁在调用函数this就是谁
+    var main = document.querySelector(".main")
+    var top = document.querySelector(".top")
+    var music = document.querySelector(".music");
+    var startbox = document.querySelector(".startbox");
+    var controlbox = document.querySelector(".control");
+    var mask2 = document.querySelector(".mask2");
+    var mask = document.querySelector(".mask");
+    var score = document.querySelector(".scor");
+    var score = document.querySelector(".scor");
+    var nowscor=document.querySelector(".nowscore");
+    var maxscores=document.querySelector(".maxscore");
+    var bestscor = document.querySelector(".bestscor");
+    var restart = document.querySelector(".restart");
+    var quit = document.querySelector(".quit");
+    var continuebtn = document.querySelector(".continue");
+    var stoprestart = document.querySelector(".stop-restart");
+    var stopquit = document.querySelector(".stop-quit");
+    var maxscore = document.querySelector(".gaofen");
+    var paihang=document.querySelector(".paihang p");
+    var lift=document.querySelector(".lift");
+    class Game {
+        constructor(main, scor, state, lift,maxscores,paihang) {
+            this.main = main;
+            this.num = 3;
+            this.obj = {};
+            //分数
+            this.scorele = scor;
+            this.scor = 0;
+            //关卡
+            this.statele = state;
+            this.state = 1;
+            //速度
+            this.speed = 3;
+            //生命值
+            this.liftele = lift;
+            this.lift = 5;
+             this.dx = 0;
+            this.height = window.innerHeight;
+            this.startControl = true;
+            controlbox.style.display = "none";
+             this.maxscore=0;
+            this.maxscores=maxscores;
+            this.paihang=paihang;
+            // this.bestscor = localStorage.bestscor ? JSON.parse(localStorage.bestscor) :[];
+        };
+//        创建字母
+        _createletter() {
+            var div = document.createElement("div");
+            div.className = "letter";
+            do {
+                var rn = Math.floor(Math.random() * 26 + 65) //取一个随机数字向下取整
+                var le = String.fromCharCode(rn);   //数字转化为字母
+            }
+            while (this.obj[le]);
+
+            div.style.backgroundImage = "url(" + le + ".png) ";
+            do {
+                var rl = Math.random() * 720;   //盒子宽度为800-80 在720位置值之间产生一个随机数
+            }
+            while (this._check(rl));
+            // 让盒子的上下位置随机变化
+            var rt = -Math.random() * 100;  //0-100随机数
+            div.style.top = rt + "px";
+            div.style.left = rl + "px"
+            this.obj[le] = {left: rl, top: rt, el: div};  //确保字母不重复   left:对象rl,top:对象rt,el:对象div
+            //将创建的盒子放入main中
+            this.main.appendChild(div);
+            this._musichandler()
+        }
+
+        //判断当前传进的left与之前是否重复   不让每个盒子进行覆盖重复
+        _check(left) {
+            for (var i in this.obj) {
+                if (left > this.obj[i].left - 80 && left < this.obj[i].left + 80) {
+                    return true  //{"A":{left:10}
+                }
+            }
+        }
+
+        //  开始
+        start() {
+            for (var i = 0; i < this.num; i++) {
+                this._createletter();
+            }
+            this._move();
+            this._keydown();
+            this.startControl = false;
+            startbox.style.display = "none";
+            controlbox.style.display = "block"
+            this.bestscor=localStorage.bestscor?JSON.parse(localStorage.bestscor):[];
+             // for(let i=0;i<this.bestscor.length;i++){
+             //        this.paihang[i].innerHTML=`玩家:${this.bestscor[i].player}得分:${this.bestscor[i].scor}`;
+             //    }
+        }
+
+        // 移动方法
+        _move() {
+            this.st = setInterval(function () {
+                for (var i in this.obj) {
+                    var t = this.obj[i].top;
+                    t += this.speed;
+                    this.obj[i].top = t;
+                    this.obj[i].el.style.top = t + "px";
+                    if (t > this.height) {
+                        this.lift--;
+                        this.liftele.innerHTML = this.lift;
+                        this.main.removeChild(this.obj[i].el);
+                        delete this.obj[i];
+                        this._createletter();
+                        if (this.lift == 0) {
+                            this._gameover();
+                            return;  //终止函数运行
+                        }
+                    }
+                }
+            }.bind(this), 50)
+        }
+
+        // 键盘按下的方法
+        _keydown() {
+            document.onkeydown = function (e) {
+                var keycode = e.keyCode;
+                var le = String.fromCharCode(keycode)   //按下后显示当前字母
+                if (this.obj[le]) {
+                    this.main.removeChild(this.obj[le].el);   //从页面中删除
+                    delete this.obj[le];          //从属性中删除
+                    // 删除一个字母的时候。分数增加一分
+                    this.scor++;
+                    this.score++;
+                    this.scorele.innerHTML = this.scor;
+                    // 当分数每到10的时候 。关卡增加
+                    if (this.scor % 10 == 0) {
+                        this._upstate()   //关卡函数
+                    }
+                    this._createletter();   //创建一个新的字母
+                }
+            }.bind(this)
+        }
+        //得分和速度的控制
+        _upstate() {
+            this.state++;
+            this.statele.innerHTML = this.state;
+            if (this.state <= 4) {
+                this.num++;
+                this._createletter();
+            } else {
+                this.speed++;
+            }
+        }
+        _gameover() {
+            if (this.bestscor.length < 3 || (this.bestscor.length >= 3 && this.scor > this.bestscor[2].scor)) {
+                var player = prompt("请输入姓名");
+                this.bestscor.push({player, scor: this.scor});
+                this.bestscor.sort(function (a, b) {
+                    if (a.scor > b.scor) {
+                        return -1;
+                    } else {
+                        return 1;
+                    }
+                    bestscor.innerHTML=this.bestscor;
+                })
+                if (this.bestscor.length > 3) {
+                    this.bestscor.pop();
+                }
+                localStorage.bestscor = JSON.stringify(this.bestscor);
+            }  
+             if(!this.bestscor){
+                return;
+            }else{
+                this.maxscores.innerHTML=this.bestscor[0].scor;
+            }
+            // for(let i=0;i<this.bestscor.length;i++){
+            //     this.paihang[i].innerHTML=`玩家:${this.bestscor[i].player} 得分:${this.bestscor[i].scor}`;
+            // }
+            paihang.innerHTML=localStorage.bestscor;
+             //paiban.table.innerHTML=localStorage.bestscor;
+            startbox.style.display = "block";
+            mask.style.display = "block";
+            (`游戏结束得分为${this.scor}!`)
+            this.main.innerHTML = "";
+            this.obj = {};
+            this.speed = 3;
+            this.scor = 0;
+            this.scorele.innerHTML = 0;
+            this.lift = 5;
+            this.liftele.innerHTML = 5;
+            this.state = 1;
+               this.dx=0;
+            this.statele.innerHTML = 1;
+            this.height = window.innerHeight;
+            this.startControl = true;
+            clearInterval(this.st);
+        }
+        _musichandler() {
+
+        }
+
+        _continuebtn() {
+            this._move();
+            this._keydown();
+            game.play();
+            mask.style.display = "none";
+            mask2.style.display = "none";
+        }
+
+        restart() {
+            this._move();
+            this._keydown();
+            game.play();
+            mask.style.display = "none";
+            mask2.style.display = "none";
+        }
+
+        _stoprestart() {
+            this._move();
+            this._keydown();
+        }
+
+        stopquit() {
+            this.start();
+        }
+
+        quit() {
+            this.start();
+        }
+
+        pause() {
+            var flag = true;
+            if (flag) {
+                clearInterval(this.st);
+                document.onkeydown = null;
+                mask2.style.display = "block";
+            } else {
+                this._continuebtn();
+                this.restart()
+            }
+            flag = !flag;
+        }
+
+        play() {
+            this._move();
+            this._keydown();
+        }
+    }
+    var start = document.querySelector(".start")
+    // 创建分数的函数
+    var scor = document.querySelector(".scor")
+    //关卡
+    var state = document.querySelector(".state")
+    //生命值
+    var lift = document.querySelector(".lift")
+    var pause = document.querySelector(".pause")
+    var game = new Game(main, scor, state, lift,maxscores,paihang);
+    //开始
+    var startControl = true;
+    start.onclick = function () {
+        if (game.startControl) {
+            game.startControl = false;
+            game.start();
+        } else {
+            game.start();
+        }
+    }
+    var flag = true;
+    pause.onclick = function () {
+        if (flag) {
+            pause.innerHTML = '继续';
+            game.pause();
+        }
+    }
+    continuebtn.onclick = function () {
+        game.play();
+        pause.innerHTML = '暂停';
+        mask2.style.display = "none";
+    }
+    stoprestart.onclick = function () {
+        game.play();
+        mask2.style.display = "none";
+    }
+    stopquit.onclick = function () {
+        mask2.style.display = "none";
+        startbox.style.display = "block";
+        game._gameover();
+        mask.style.display = "none";
+    }
+    quit.onclick = function () {
+        mask2.style.display = "none";
+        startbox.style.display = "block";
+        game._gameover();
+        mask.style.display = "none";
+    }
+    
+</script>
+</html>

@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>个人主页</title>
+    <!--mobile apps-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <!--mobile apps-->
+    <!--Custom Theme files-->
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="css/swipebox.css">
+    <link rel="stylesheet" href="css/jquery.fullPage.css">
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/jquery.fullPage.min.js"></script>
+
+
+    <script type="text/javascript">
+
+
+    </script>
+    <!--//end-smooth-scrolling-->
+    <script src="js/jquery.fullPage.js"></script>
+    <script src="js/jquery.swipebox.min.js"></script>
+
+    <script>
+        $(function () {
+            $('#fullpage').fullpage({
+                'verticalCentered': false,
+                'css3': true,
+                'sectionsColor': ['#fff', '#fff', '#f1f1f1', '#252424'],
+                anchors: ['page1', 'page2', 'page3', 'page4'],
+                'navigation': true,
+                'navigationPosition': 'right',
+                'navigationTooltips': ['个人主页', '项目展示', '教育经历', '联系我们'],
+                lick: function (anchorLink, index, event) {
+                    $(".scroll").click(function (anchorLink, index, event) {
+                        $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
+                    });
+                },
+                onLeave: function (anchorLink, index) {
+                    $(document).ready(function () {
+                        $('#horizontalTab').easyResponsiveTabs({
+                            type: 'default',
+                            width: 'auto',
+                            fit: true,
+                        });
+                    });
+                    $(".swipebox").swipebox();
+
+                }
+            })
+
+        })
+    </script>
+
+
+</head>
+<body>
+<!--banner-->
+<div id="fullpage">
+    <div class="section">
+        <div id="home" class="banner">
+            <div class="banner-info">
+                <div class="container">
+                    <div class="col-md-3 header-left">
+                        <img src="images/BNN9.jpg" alt=""/>
+                    </div>
+                    <div class="col-md-6 header-right">
+                        <h2>Hello</h2>
+                        <h1>欢迎来到我的个人主页</h1>
+                        <h6>Welcome to my personal homepage</h6>
+                        <ul class="address">
+                            <li>
+                                <ul class="address-text">
+                                    <li><b>name</b></li>
+                                    <li>Liqin</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul class="address-text">
+                                    <li><b>QQ邮箱 </b></li>
+                                    <li>1430961095@qq.com</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul class="address-text">
+                                    <li><b>地址</b></li>
+                                    <li>山西省大同市</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul class="address-text">
+                                    <li><b>E-MAIL </b></li>
+                                    <li><a href="mailto:example@mail.com"> mail@example.com</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul class="address-text">
+                                    <li><b>TEl </b></li>
+                                    <li><a href="http://w3layouts.com">15735163761</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 header-left">
+                        <img src="images/672.jpg" alt=""/>
+                    </div>
+                    <div class="col-md-3 header-left">
+                        <img src="images/35.jpg" alt=""/>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+        <!--//banner-->
+    </div>
+    <div class="section">
+
+        <!--top-nav-->
+        <div class="top-nav wow">
+            <div class="container">
+                <div class="navbar-header logo">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1">
+                        Menu
+                    </button>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <div class="menu">
+                        <ul class="nav navbar">
+                            <li><a href="#about" class="scroll">自我介绍</a></li>
+                            <li><a href="#education" class="scroll">教育经历</a></li>
+                            <li><a href="#skills" class="scroll">我的技能</a></li>
+                            <li><a href="#projects" class="scroll">作品展示</a></li>
+                            <li><a href="#contact" class="scroll">联系我</a></li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--//top-nav-->
+        <!--about-->
+        <div id="about" class="about">
+            <div class="container">
+                <h3 class="title"> About Me</h3>
+                <div class="col-md-8 about-left">
+                    <p>姓 名:<span>李琴</span></p>
+                    <p>出生日期:<span>19960429</span></p>
+                    <p>专 业:<span>信息管理</span></p>
+                    <p>毕业院校:<span>山西金融</span></p>
+                    <p>特长爱好：
+                        <span>擅长演讲，喜欢与人交谈，沟通能力较强
+                    喜欢旅游，适应不同环境的能力
+                    </span>
+                    </p>
+                    <p>自我评价：<span>
+                    性格开朗，热情乐观，为人诚实守信
+                      有较强的责任感，良好的沟通，协调能力，有良好的人际关系与团队合作精神
+                      勇于接受新事物，有较强的社会适应能力，做事认真  
+                </span>
+                    </p>
+                    <p>专业技能：<span>HTML、JavaScript、PS、AI、CSS、Jquery</span></p>
+                    <p>目标：<span>让您认识我，认可我，赏识我，给我一个机会，让我的热情和知识转化成力量融入单位的动力中，我会用实际行动向您证明我的实力，愿贵公司事业蒸蒸日上，屡创佳绩。</span>
+                    </p>
+
+                </div>
+                <div class="col-md-4 about-right">
+                    <ul>
+                        <h5>获奖情况</h5>
+                        <li><span class="glyphicon glyphicon-menu-right"></span> 山西电子商务技能比赛三等奖</li>
+                        <li><span class="glyphicon glyphicon-menu-right"></span> 优秀团员</li>
+                        <li><span class="glyphicon glyphicon-menu-right"></span> ......</li>
+                        <li><span class="glyphicon glyphicon-menu-right"></span> ......</li>
+                        <li><span class="glyphicon glyphicon-menu-right"></span> ......</li>
+                        <li><span class="glyphicon glyphicon-menu-right"></span> ......</li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+    </div>
+    <div class="section">
+        <div class="slide">
+            <!--work-experience-->
+            <div class="agileits_agile_about">
+                <h3 class="title">My Work</h3>
+                <div class="agileits_agile_about_portfolio">
+                    <div class="col-md-4 agileits_agile_about_portfolio_left">
+                        <div class="w3_portfolio_grid view second-effect">
+                            <a href="images/2.jpg" class="swipebox" title="">
+                                <img src="images/2.jpg" alt=" " class="img-responsive"/>
+                                <div class="mask">
+                                    <p>Modern CV</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 agileits_agile_about_portfolio_left">
+                        <div class="w3_portfolio_grid view second-effect">
+                            <a href="images/3.jpg" class="swipebox" title="">
+                                <img src="images/3.jpg" alt=" " class="img-responsive"/>
+                                <div class="mask">
+                                    <p>Modern CV</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 agileits_agile_about_portfolio_left">
+                        <div class="w3_portfolio_grid view second-effect">
+                            <a href="images/4.jpg" class="swipebox" title=" ">
+                                <img src="images/4.jpg" alt=" " class="img-responsive"/>
+                                <div class="mask">
+                                    <p>Modern CV</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="agileits_agile_about_portfolio1">
+                    <div class="col-md-4 agileits_agile_about_portfolio_left">
+                        <div class="w3_portfolio_grid view second-effect">
+                            <a href="images/7.jpg" class="swipebox" title="">
+                                <img src="images/7.jpg" alt=" " class="img-responsive"/>
+                                <div class="mask">
+                                    <p>Modern CV</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 agileits_agile_about_portfolio_left">
+                        <div class="w3_portfolio_grid view second-effect">
+                            <a href="images/7.jpg" class="swipebox" title="">
+                                <img src="images/7.jpg" alt=" " class="img-responsive"/>
+                                <div class="mask">
+                                    <p>Modern CV</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 agileits_agile_about_portfolio_left">
+                        <div class="w3_portfolio_grid view second-effect">
+                            <a href="images/7.jpg" class="swipebox" title=".">
+                                <img src="images/7.jpg" alt=" " class="img-responsive"/>
+                                <div class="mask">
+                                    <p>Modern CV</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <!-- swipe box js -->
+                <!-- //swipe box js -->
+            </div>
+            <!--//work-experience-->
+        </div>
+        <div class="slide">
+            <!--education-->
+            <div id="education" class="education">
+                <div class="container">
+                    <h3 class="title">Education</h3>
+                    <div class="work-info">
+                        <div class="col-md-6 work-left">
+                            <h4>2008- 2011</h4>
+                        </div>
+                        <div class="col-md-6 work-right">
+                            <h5><span class="glyphicon glyphicon-education"> </span> 广灵第二中学</h5>
+                            <p>懵懂的时刻。无忧无虑 </p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="work-info">
+                        <div class="col-md-6 work-right work-right2">
+                            <h4>2011-2014</h4>
+                        </div>
+                        <div class="col-md-6 work-left work-left2">
+                            <h5>广灵第二中学 <span class="glyphicon glyphicon-education"></span></h5>
+                            <p>三年来，我全面认真学习专业知识，学习成绩良好，积极参加系组织的各种活动，具有良好的交际能力，同时，我还深入学习专业和自学感兴趣的领域</p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="work-info">
+                        <div class="col-md-6 work-left">
+                            <h4>2014-2017</h4>
+                        </div>
+                        <div class="col-md-6 work-right">
+                            <h5><span class="glyphicon glyphicon-education"> </span> 山西金融职业学院</h5>
+                            <p>
+                                三年来，我全面认真学习专业知识，学习成绩良好，积极参加院系组织的各种活动，具有良好的交际能力，同时，我还深入学习专业和自学感兴趣的领域。具有扎实的专业知识和基础理论，具有计算机基本编程能力和网页制作，熟悉数据开发及编程。 </p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <!--//education-->
+        </div>
+        <div class="slide">
+            <!--skills-->
+            <div id="skills" class="skills">
+                <div class="container">
+                    <h3 class="title">专业技能</h3>
+                    <div class="skills-info">
+                        <div class="col-md-6 bar-grids">
+                            <h6>WEB DESIGN <span> 80% </span></h6>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped active" style="width: 80%">
+                                </div>
+                            </div>
+                            <h6>PS<span> 70% </span></h6>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped active" style="width: 70%">
+                                </div>
+                            </div>
+                            <h6>HTML/CSS<span>85% </span></h6>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped active" style="width: 85%">
+                                </div>
+                            </div>
+                            <h6>AI <span> 80% </span></h6>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped active" style="width: 80%">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 bar-grids">
+                            <h6>PROJECT MANAGEMENT <span> 85% </span></h6>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped active" style="width: 85%">
+                                </div>
+                            </div>
+                            <h6>SOCIAL MEDIA MARKETING<span> 95% </span></h6>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped active" style="width: 95%">
+                                </div>
+                            </div>
+                            <h6>PHP<span>70% </span></h6>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped active" style="width: 70%">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide">
+            <!--portfolio-->
+            <div id="projects" class="portfolio">
+                <div class="container">
+                    <h3 class="title wow zoomInLeft animated" data-wow-delay=".5s">作品展示</h3>
+                    <div class="sap_tabs">
+                        <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+                            <ul class="resp-tabs-list wow fadeInUp animated" data-wow-delay=".7s">
+                                <li class="resp-tab-item"><span>网页</span></li>
+                                <li class="resp-tab-item"><span>练习</span></li>
+                                <li class="resp-tab-item"><span>游戏</span></li>
+                                <li class="resp-tab-item"><span>个人网站</span></li>
+                            </ul>
+                            <div class="clearfix"></div>
+                            <div class="resp-tabs-container">
+                                <div class="tab-1 resp-tab-content">
+                                    <div class="tab_img">
+                                        <!-- 网页 -->
+                                        <div class="col-md-2 portfolio-grids">
+                                            <div class="grid">
+                                                <a href="wangye/fk/index.html">
+                                                    <img src="images/ti1.jpg" alt="" class="img-responsive"/>
+                                                    <div class="figcaption">
+                                                    <span> 凡客</span>
+                                                        <p>凡客网页</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 portfolio-grids">
+                                            <div class="grid">
+                                                <a href="wangye/jd/index.html">
+                                                    <img src="images/xiao.gif" alt="" class="img-responsive"/>
+                                                    <div class="figcaption">
+                                                       <span> 京东</span>
+                                                        <p>京东网页</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 portfolio-grids">
+                                            <div class="grid">
+                                                <a href="wangye/tm/index.html">
+                                                    <img src="images/bgg.jpg" alt="" class="img-responsive"/>
+                                                    <div class="figcaption">
+                                                        <span> 天猫</span>
+                                                        <p>天猫网页</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 portfolio-grids">
+                                            <div class="grid">
+                                                <a href="wangye/xm/index.html">
+                                                    <img src="images/bgg.jpg" alt="" class="img-responsive"/>
+                                                    <div class="figcaption">
+                                                        <span> 小米</span>
+                                                        <p>小米网页</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 portfolio-grids">
+                                            <div class="grid">
+                                                <a href="wangye/ydtm/index.html">
+                                                    <img src="images/bgg.jpg" alt="" class="img-responsive"/>
+                                                    <div class="figcaption">
+                                                        <span>移动天猫</span>
+                                                        <p>移动天猫</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 portfolio-grids">
+                                            <div class="grid">
+                                                <a href="wangye/zgyd/index.html">
+                                                    <img src="images/bgg.jpg" alt="" class="img-responsive"/>
+                                                    <div class="figcaption">
+                                                        <span> 中国移动网页</span>
+                                                        <p>移动网页</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 portfolio-grids">
+                                            <div class="grid">
+                                                <a href="wangye/sf/index.html">
+                                                    <img src="images/bgg.jpg" alt="" class="img-responsive"/>
+                                                    <div class="figcaption">
+                                                        <span> 沙发网</span>
+                                                        <p>沙发网响应式</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 portfolio-grids">
+                                            <div class="grid">
+                                                <a href="wangye/pg/index.html">
+                                                    <img src="images/bgg.jpg" alt="" class="img-responsive"/>
+                                                    <div class="figcaption">
+                                                       <span>苹果</span>
+                                                        <p>苹果官网</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 portfolio-grids">
+                                            <div class="grid">
+                                                <a href="wangye/yt/inndx.html">
+                                                    <img src="images/bgg.jpg" alt="" class="img-responsive"/>
+                                                    <div class="figcaption">
+                                                        <span>银泰</span>
+                                                        <p>银泰官网</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                                <!-- 练习 -->
+                                <div class="tab-1 resp-tab-content">
+                                    <div class="tab_img">
+                                        <div class="col-md-4 portfolio-grids">
+                                            <div class="grid">
+                                                <a href="lianxi/todoList/index.html">
+                                                    <img src="images/bg1.jpg" alt="" class="img-responsive"/>
+                                                    <div class="figcaption">
+                                                        <h3>My<span> todoList</span></h3>
+                                                        <p>todoList</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 portfolio-grids">
+                                            <div class="grid">
+                                                <a href="lianxi/htb/index.html">
+                                                    <img src="images/bg1.jpg" alt="" class="img-responsive"/>
+                                                    <div class="figcaption">
+                                                        <h3>My<span> 绘图板</span></h3>
+                                                        <p>绘图板</p>
+                                                    </div>
+                                                </a>
+                                            </div>youxi
+                                        </div>
+                                        <div class="col-md-4 portfolio-grids">
+                                            <div class="grid">
+                                                <a href="lianxi/index.html">
+                                                    <img src="images/bg1.jpg" alt="" class="img-responsive"/>
+                                                    <div class="figcaption">
+                                                        <h3>My<span> 记事本</span></h3>
+                                                        <p>记事本</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                                <!-- 游戏 -->
+                                <div class="tab-1 resp-tab-content">
+                                    <div class="tab_img">
+                                        <div class="col-md-4 portfolio-grids">
+                                            <div class="grid">
+                                                <a href="youxi/dazi/index.html">
+                                                    <img src="images/youxi.png" alt="" class="img-responsive"/>
+                                                    <div class="figcaption">
+                                                        <h3>My<span> 打字游戏</span></h3>
+                                                        <p>扫雷游戏</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 portfolio-grids">
+                                            <div class="grid">
+                                                <a href="youxi/index.html">
+                                                    <img src="images/qi.png" alt="" class="img-responsive"/>
+                                                    <div class="figcaption">
+                                                        <h3>My<span> 五子棋</span></h3>
+                                                        <p>五子棋</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 portfolio-grids">
+                                            <div class="grid">
+                                                <a href="youxi/saolei/index.html">
+                                                    <img src="images/slei.png" alt="" class="img-responsive"/>
+                                                    <div class="figcaption">
+                                                        <h3>My<span>扫雷游戏</span></h3>
+                                                        <p>扫雷游戏</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-1 resp-tab-content">
+                                    <div class="tab_img">
+                                        <div class="grid">
+                                            <a href="gerenwang/gerenwang/index.html">
+                                                <img src="images/gw.png" alt="" class="img-responsive"/>
+                                                <div class="figcaption">
+                                                    <h3>My<span>甜品主页</span></h3>
+                                                    <p>甜品主页</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--ResponsiveTabs-->
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="section">
+        <div class="welcome contact" id="contact">
+            <div class="container">
+                <h3 class="title">Contact Us</h3>
+                <div class="contact-row">
+                    <div class="address-left">
+                        <p>tel : 15735163761</p>
+                    </div>
+                    <div class="address-right">
+
+                        <p>E-mail : <a href="mailto:info@example.com">1430961095qq.com</a></p>
+                    </div>
+
+                    <div class="contact-form">
+                        <form action="#" method="post">
+                            <input type="text" name="Name" placeholder="Name">
+                            <input class="email" name="Email" type="text" placeholder="Email">
+                            <input class="phone" name="phone" type="text" placeholder="Phone">
+                            <textarea name="Message" placeholder="Message"></textarea>
+                            <input type="submit" value="SUBMIT">
+                        </form>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--//about-->
+
+
+<!--//education-->
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

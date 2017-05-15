@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .sence {
+            width: 500px;
+            height: 500px;
+            border-left: 1px solid #ccc;
+            border-top: 1px solid #ccc;
+            margin: 30px auto;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        body {
+            height: 100%;
+            transform-style: preserve-3d;
+            overflow: hidden;
+            background: url(img/bg.jpg) no-repeat;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .block {
+            width: 49px;
+            height: 49px;
+            border-right: 1px solid grey;
+            border-bottom: 1px solid grey;
+            /*background: #333;*/
+            float: left;
+            box-shadow: 0 0 2px #333 inset;
+            background: url(img/caod.jpg);
+        }
+
+        .show {
+            background: url(img/dilei.jpg) no-repeat;
+            background-size: cover;
+        }
+
+        .control {
+            width: 200px;
+            height:80%;
+            position: fixed;
+            right: 0;
+            top: 60px;
+            background: #000;
+            margin-right: 150px;
+            padding-top: 31px;
+            display: none;
+        }
+
+        .num {
+            background: #fff;
+            font-size: 20px;
+            line-height: 49px;
+            text-align: center;
+        }
+
+        .flag {
+            background: url(img/hongqi.jpg) no-repeat;
+            background-size: cover;
+        }
+
+        .flagnum {
+            width: 40px;
+            padding: 5px;
+            background: url(img/hongqi.jpg) no-repeat;
+            border: 1px solid red;
+            position: absolute;
+            right: 20px;
+            top: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: "微软雅黑";
+        }
+
+        .restart, .paihang, time, .nd {
+            display: block;
+            height: 50px;
+            width: 200px;
+            background: #ff960d;
+            margin: 10px 0;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            color: #fff;
+        }
+
+        .nd {
+            position: relative;
+        }
+
+        .nandu {
+            height: auto;
+            width: 200px;
+            background: #ff960d;
+            margin: 10px 0 0 0;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            color: #fff;
+            padding: 0;
+            z-index: 10;
+            position: absolute;
+            left: 0;
+            top: 50px;
+            display: none;
+        }
+
+        .easy, .mid, .hard {
+            list-style: none;
+            width: 100px;
+            height: 50px;
+            margin-left: 11px;
+            margin-bottom: 20px;
+        }
+
+        .paihangbang {
+            height: 200px;
+            width: 200px;
+            background: #13dfff;
+            margin: 10px 0 0 0;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            color: #fff;
+            padding: 0;
+            display: none;
+        }
+
+        h1 {
+            width: 100%;
+            text-align: center;
+            margin: 0;
+            margin-bottom: 20px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 20px;
+            color: #fff;
+        }
+
+        li {
+            width: 200px;
+            font-size: 16px;
+            padding-left: 20px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100px;
+            height: 50px;
+            background: red;
+            font-size: 20px;
+        }
+
+        .mask {
+            width: 500px;
+            height: 500px;
+            border-top: 1px solid #000;
+            border-left: 1px solid #000;
+            margin: 30px auto;
+            position: absolute;
+            top: 0px;
+            left: 433px;
+            background: rgba(255, 65, 4, 0.8);
+            overflow: hidden;
+            /*display: none;*/
+        }
+
+        .sao {
+            width: 500px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            color: #fff;
+            font-size: 37px;
+        }
+
+        .start {
+            margin-top: 50px;
+        }
+
+        .start, .renew {
+            width: 200px;
+            height: 50px;
+            border-radius: 10px;
+            background: #ccc;
+            text-align: center;
+            line-height: 50px;
+            line-height: 50px;
+            color: #fff;
+            font-size: 25px;
+            margin-bottom: 20px;
+            margin-left: 137px;
+        }
+
+        .flagnum {
+            position: absolute;
+            top: -40px;
+            display: block;
+            height: 38px;
+            width: 187px;
+            background: #ff960d;
+            margin: 10px 0;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 38px;
+            font-size: 20px;
+            cursor: pointer;
+            color: #fff;
+            left: 0px;
+        }
+    </style>
+</head>
+<body>
+<div class="sence"></div>
+<div class="mask">
+    <div class="sao">
+        扫雷游戏
+    </div>
+    <div class="start">开始游戏</div>
+    <div class="renew">重新开始</div>
+</div>
+<div class="control">
+    <time>时间：</time>
+    <div class="flagnum">flag:</div>
+    <div class="restart">重新开始</div>
+    <div class="nd">难度选择
+        <div class="nandu">
+            <button data-level="easy" class="easy">Easy</button>
+            <button data-level="mid" class="mid">Medium</button>
+            <button data-level="hard" class="hard">Hard</button>
+        </div>
+    </div>
+    <div class="paihang">排行榜</div>
+    <ul class="paihangbang">
+        <li>一 ：</li>
+        <li>二 ：</li>
+        <li>三 ：</li>
+    </ul>
+</div>
+</body>
+<script src="jQuery.js"></script>
+<script>
+    $(document).ready(function () {
+        var num = 10;
+        var time1 = 0;
+        var bili = 10;
+        var t;
+        var scor = 0;
+        var bestscor = localStorage.best ? JSON.parse(localStorage.best) : [];
+
+        function move() {
+            time1++;
+            $("time").html("时间:" + time1 + "s");
+        }
+
+        t = setInterval(move, 2000);
+        move();
+        creat();
+        $(".start").click(function () {
+            $(".mask").fadeOut(500);
+            $(".sence").fadeIn(500);
+            $(".control").show();
+            var n = 0;
+            var t = setInterval(function () {        //计时器
+                $(".time").text(function (index, n) {
+                    n++;
+                    $(".time").html(n);
+                })
+                if ($(".time").html() ==60) {
+                    clearInterval(t);
+                    $(".time").html(0);
+                }
+            }, 3000)
+        });
+
+
+        $(".restart").click(function () {
+            clearInterval(t);
+            $(".sence").empty();
+            time1 = 0;
+            $("time").html("时间:" + time1 + "s");
+            num = bili;
+            t = setInterval(move, 1000);
+            creat();
+        })
+        $(".nd").click(function () {
+            $(".nandu").slideToggle(500);
+        })
+        $(".jd").click(function () {
+            num = 5;
+            bili = 5;
+            creat();
+        })
+        $(".yb").click(function () {
+            num = 10;
+            bili = 10;
+            creat();
+        })
+        $(".kn").click(function () {
+            num = 15;
+            bili = 15;
+            creat();
+        })
+        $(".paihang").click(function () {
+            $(".paihangbang").slideToggle();
+        })
+
+        function creat() {
+            do {
+                $(".sence").empty();
+
+                for (var i = 0; i < 10; i++) {
+                    for (var j = 0; j < 10; j++) {
+                        var isLei = Math.random() > 1 - bili / 100;
+                        $("<div>")
+                            .addClass(function () {
+                                if (isLei) {
+                                    return "block lei";
+                                } else {
+                                    return "block";
+                                }
+                            })
+                            .attr("id", i + "-" + j)
+                            .data("pos", {x: i, y: j})
+                            .mousedown(mousedownEvent)
+                            .appendTo($(".sence"))
+                    }
+                }
+            } while ($(".lei").length != num)
+        }
+
+        function mousedownEvent(e) {
+            if (leftclick != null) {
+                if (e.which == 1) {
+                    leftclick.call(this);
+                } else {
+                    rightclick.call(this);
+                }
+            } else {
+                return;
+            }
+        }
+
+        function leftclick() {
+            if ($(this).hasClass("flag")) {
+                return;
+            }
+            if ($(this).hasClass("lei")) {
+                $(".lei").addClass("show");
+                alert("游戏失败");
+                clearInterval(t);
+                $(".sence div").unbind("mousedown");
+                return;
+            } else {
+                $(this).addClass("num");
+                var pos = $(this).data("pos");
+                var n = 0;
+                for (let i = pos.x - 1; i <= pos.x + 1; i++) {
+                    for (let j = pos.y - 1; j <= pos.y + 1; j++) {
+                        if ($("#" + i + "-" + j).hasClass("lei")) {
+                            n++;
+                        }
+                    }
+                }
+                $(this).html(n);
+                if (n == 0) {
+                    for (let i = pos.x - 1; i <= pos.x + 1; i++) {
+                        for (let j = pos.y - 1; j <= pos.y + 1; j++) {
+                            var obj = $("#" + i + "-" + j);
+                            if (obj.length == 1 && !obj.hasClass("num")) {
+                                leftclick.call(obj[0]);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        function rightclick() {
+            if ($(this).hasClass("num")) {
+                return;
+            }
+            if ($(this).hasClass("flag")) {
+                $(this).removeClass("flag");
+                num++;
+            } else {
+                $(this).addClass("flag");
+                num--;
+                if (num < 0) {
+                    alert("游戏失败");
+                    clearInterval(t);
+                    $(".sence div").unbind("mousedown");
+                    return;
+                }
+                if (num == 0) {
+                    if ($(".flag").filter(".lei").length == bili) {
+                        alert("游戏成功");
+                        clearInterval(t);
+                        scor = time1;
+                        if (bestscor.length < 3 || bestscor.length == 3 && scor < bestscor[2].scors
+                        ) {
+                            var name = prompt("请输入姓名：");
+                            bestscor.push({name, scors: scor});
+                            bestscor.sort(function (a, b) {
+                                if (a.scors < b.scors) {
+                                    return -1;
+                                } else {
+                                    return 1;
+                                }
+                            })
+                            if (bestscor.length > 3) {
+                                bestscor.pop();
+                            }
+                            reWrite();
+                        }
+                        localStorage.best = JSON.stringify(bestscor);
+                        alert("用时：" + scor)
+                    }
+                }
+            }
+            $(".flagnum").html("flag:" + num);
+        }
+
+        $(document).on("contextmenu", function (e) {
+            e.preventDefault();
+        })
+        function reWrite() {
+            $("li").html("");
+            if (bestscor) {
+                $(bestscor).each(function (index, v) {
+                    $("li")[index].innerHTML += v.name + " ：" + v.scors;
+                })
+            }
+        }
+
+        reWrite();
+    })
+</script>
+</html>

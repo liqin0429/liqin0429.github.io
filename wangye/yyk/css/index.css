@@ -1,0 +1,326 @@
+body{
+	font-size: 16px;
+    font-family: "苹方","微软雅黑", "Helvetica";
+    color: #999;
+}
+header{
+    width: 7.68rem;
+    height: 0.89rem;
+    background-color: #007be3;
+    /*top: 0;*/
+    position: fixed;
+    overflow:hidden;
+    z-index: 1;
+}
+.logo{
+    width: 2.27rem;
+    height: 0.68rem;
+    margin: 0 auto;
+    padding-top: 0.16rem;
+    display: flex;
+}
+.logotu{
+    width: 0.7rem;
+    height: 0.67rem;
+    display: flex;
+}
+.logotu img{
+    width: 0.72rem;
+    height: 0.67rem;
+}
+.logozi{
+    font-size: 0.36rem;
+    color: #fff;
+    line-height: 0.68rem;
+    margin-left: 0.16rem;
+}
+
+.banner{
+    width: 100%;
+    height: 4.21rem;
+    background-image: url(../img/banner_02.png);
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    cursor: pointer;
+}   
+span{
+    height: 0.04rem;
+    background-color: #ff8d12;
+    position: absolute;
+    bottom:0;
+    left: 0;
+}
+.content{
+    padding: 0.30rem 0.2rem 0;
+    background-color: #eee;
+}
+.content ul{
+    text-align: center;
+    font-size: 0.24rem;
+    display: flex;
+    justify-content:space-around;
+}
+.content ul li{
+    width: 1.55rem;
+    height: 1.96rem;
+    float: left;
+    /*margin-right: 0.3rem;*/
+    margin-bottom: 0.32rem;
+    text-align: center;
+    font-size: 0.24rem;
+    color: #000;
+}
+.t{
+    display: block;
+    width: 100%;
+    height: 1.56rem;
+    border-radius: 0.25rem;
+    background-color: #fff;
+    margin-bottom: 0.16rem;
+    padding-top: 0.25rem;
+    padding-left: 0.25rem;
+    box-sizing: border-box;
+}
+.t_1{
+    width: 1.05rem;
+    height: 1.05rem;
+    background: #fff url(../img/shouye6.png) 0 0 no-repeat;
+    background-size: 2rem;
+}
+.t_2{
+    width: 1.05rem;
+    height: 1.05rem;
+    background: #fff url(../img/ufo.png) 0 0 no-repeat;
+    background-size: 1rem;
+}
+.fuwutixi{
+    width: 100%;
+    background-color: #fff;
+    height:4.3rem;
+    margin-bottom: 0.8rem; 
+}
+.fwtx_bt{
+    width: 100%;
+    height: 0.63rem;
+    border-bottom: 1px solid #e8e8e8;
+    text-align: center;
+    line-height: 0.63rem;
+    font-size: 0.24rem;
+    color: #1378ba;
+}
+.nr_s{
+    width: 100%;
+    height: 2.18rem;
+    border-bottom: 1px solid #e8e8e8;
+}
+.nr_x{
+    width: 100%;
+    height: 1.38rem;
+    border-bottom: 1px solid #e8e8e8;
+}
+.nr_s_z{
+    float: left;
+    width: 50%;
+    height: 100%;
+    border-right: 1px solid #e8e8e8;
+    padding: 0.38rem 0rem 0.48rem 0.16rem;
+    box-sizing: border-box;
+}
+.nr_s_y{
+    float: left;
+    width: 50%;
+    height: 100%;
+    padding: 0.38rem 0rem 0.48rem 0.16rem;
+    box-sizing: border-box;
+}
+.xiaok_z{
+    width: 1.8rem;
+    float: left;
+    height: 100%;
+}
+.xiaok_y{
+    width: 1.5rem;
+    height: 100%;
+    float: left;
+}
+.xiaok_z_1{
+    font-size: 0.24rem;
+    font-weight: normal;
+    color: #000000;
+}
+.xiaok_z_2{
+    font-size: 0.18rem;
+    font-weight: normal;
+    color: #999999;
+}
+.t1{
+    background: #fff url(../img/shouye6.png) 0 -4.4rem no-repeat;
+    background-size: 2rem;
+}
+.t2{
+    background: #fff url(../img/shouye6.png)  0 -5.9rem no-repeat;
+    background-size: 2rem;
+}
+.box{
+    float: left;
+    width: 33.33%;
+    height: 100%;
+    padding: 0.4rem 0 0.38rem 0.2rem;
+    box-sizing: border-box;
+}
+.box2{
+    border-right: 1px solid #e8e8e8;
+    border-left: 1px solid #e8e8e8;
+}
+.box_t{
+    width: 0.6rem;
+    height: 100%;
+    float: left;
+}
+.box_z{
+    width: 1.5rem;
+    margin-left: 0.1rem;
+    float: left;
+    height: 100%;
+}
+h2{
+    font-size: 0.24rem;
+    color: #000000;
+    font-weight: normal;
+}
+h3{
+    font-size: 0.18rem;
+    color: #999999;
+    font-weight: normal;
+    line-height: 0.3rem;
+}
+.bt1{
+    background: url(../img/shouye_01.png) center center no-repeat;
+    background-size: cover;
+}
+.bt2{
+    background: url(../img/shouye_02.png) center center no-repeat;
+    background-size: cover;
+}
+.bt3{
+    background: url(../img/shouye_03.png) center center no-repeat;
+    background-size: cover;
+}
+h2{
+    font-size: 0.24rem;
+    color: #000000;
+    font-weight: normal;
+}
+h3{
+    font-size: 0.18rem;
+    color: #999999;
+    font-weight: normal;
+    line-height: 0.3rem;
+}
+.dibu{
+    width: 100%;
+    height: 0.9rem;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    margin-top: 0.2rem;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    box-shadow: 0 0 0.08rem rgba(0,0,0,0.1);
+    z-index: 999;
+}
+.nr{
+    margin-top: 0.2rem;
+    background-color: background: #e7e7e7;
+    width: 100%;
+    height: 100%;
+}
+.nr a{
+    width: 33.3%;
+    height: 0.8rem;
+    float: left;
+}
+.nr_z1{
+    width: 100%;
+    height: 100%;
+    font-size: 0.24rem;
+    color: #000;
+    text-align: left;
+    background: #e7e7e7;
+    margin: 0 auto;
+}
+.nr_z1 i{
+    width: 0.32rem;
+    height: 0.32rem;
+    float: left;
+    margin-top: 0.2rem;
+    margin-left: 0.5rem;
+}
+.zi_t1{
+    background: url(../img/qq.png) center no-repeat;
+    background-size: cover;
+}
+.nr_z1 p{
+    color: #000;
+    text-align: left;
+    line-height: 0.7rem;
+    font-weight: bold;
+}
+.shixue{
+    width: 40%;
+    height: 0.9rem;
+    position: relative;
+    z-index: 99999;
+    box-shadow: 0 0 0.08rem rgba(255,126,0,0.1);
+    margin-top: -0.1rem;
+}
+.nr_z2{
+    background-color: #ff8d12;
+    border-radius: 0.08rem;
+    box-shadow: 0px 0px 0.15rem #ff8d12;
+    width: 100%;
+    height: 100%;
+    
+}
+.nr_z2 p{
+    display: inline-block;
+    font-size: 0.3rem;
+    line-height: 0.8rem;
+    color: #fff;
+    float: left;
+    text-align: center;
+    font-weight: bold;
+}
+.zi_t2{
+    width: 0.36rem;
+    height: 0.36rem;
+    background:url(../img/shouye6.png) -1.6rem -4.78rem no-repeat;
+    background-size: 2rem;
+    display: inline-block;
+    margin-left: 0.42rem;
+    margin-right: 0.08rem;
+    float: left;
+    margin-top: 0.2rem;
+}
+.zi_t3{
+    width: 0.36rem;
+    height: 0.36rem;
+    background: url(../img/shouye6.png) -1.62rem -5.3rem no-repeat;
+    background-size: 2rem;
+    display: inline-block;
+    margin-left: 0.42rem;
+    margin-right: 0.08rem;
+    position: relative;
+}
+
+
+  
+
+ .clear:after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    clear: both;
+}
