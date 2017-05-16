@@ -280,7 +280,8 @@ span{
 /*--//education--*/
 /*--skills--*/
 .skills{
-	background:#232121;
+    height: 100%;
+	background:#2f2e2e;
 }
 .bar-grids {
     padding: 0 4em;
@@ -676,7 +677,8 @@ ul.address li ul.address-text li {
     margin-top: 0.8em;
 }
 .about, .work, .education, .skills, .portfolio, .contact {
-    padding: 4em 0;
+    padding: 1em 0;
+    overflow: hidden;
 }
 h3.title {
     font-size: 3.6em;

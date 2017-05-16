@@ -16,7 +16,7 @@
     <script src="js/jquery.fullPage.min.js"></script>
 
 
-    <script type="text/javascript">
+    <script src="js/easyResponsiveTabs.js">
 
 
     </script>
@@ -34,7 +34,7 @@
                 'navigation': true,
                 'navigationPosition': 'right',
                 'navigationTooltips': ['个人主页', '自我介绍', '作品展示', '联系我们'],
-                lick: function (anchorLink, index, event) {
+                afterLoad: function (anchorLink, index, event) {
                     $(".scroll").click(function (anchorLink, index, event) {
                         $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
                     });
@@ -48,7 +48,8 @@
                         });
                     });
                     $(".swipebox").swipebox();
-
+                    $(".resp-tab-item").click(function () {
+                    }).removeClass(".resp-tab-active")
                 }
             })
 
