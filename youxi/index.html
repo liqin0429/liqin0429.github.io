@@ -11,8 +11,11 @@
 		}
 		body{
 			width: 100%;
-			height: 100%;
+			height: 150%;
 			position: fixed;
+			background: url(wuzi/bg.jpg);
+			background-size: 100%;
+			background-repeat: no-repeat;
 		}
 		#chessboard{
 			width: 90vmin;
@@ -23,7 +26,8 @@
   				支持的运算单位： rem , em , percentage , px*/
 			margin: calc(50vh - 46vmin + 2px) auto;
               /*vh，是指CSS中相对长度单位，表示相对视口高度（Viewport Height），1vh = 1% * 视口高度。*/
-			background: #f5ca69;
+			background: rgba(255, 147, 10, 0.6);
+			background: url(wuzi/bg2.jpg);
 			border: 2px solid #000;
 			border-radius: 7px;
 			-webkit-box-shadow: .1rem .1rem .05rem rgba(0,0,0,.5),   
@@ -71,7 +75,8 @@
 			position: fixed;
 			top: 0;
 			left: 0;
-			background-color: rgb(229, 236, 235);
+			/*background-color: rgb(229, 236, 235);*/
+
 		}
 		.conBox{
 			display: block;
@@ -179,12 +184,38 @@
 		    -webkit-transform: scaleY(0.5);
 		    transform: scaleY(0.5);
 		}
+		.music {
+		    width: 50px;
+		    height: 50px;
+		    border-radius: 50%;
+		    background: url(wuzi/music.png) no-repeat center;
+		    position: absolute;
+		    right: 345px;
+		    top: -7px;
+		    z-index: 9999;
+		    background-color: #FEC743;
+		    border: 3px solid #fff;
+		    animation: rotate 3s linear infinite;
+		    cursor: pointer;
+		}
+		 @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
 	</style>
 </head>
 <body>
+<section id="dong"></section>
 	<section id="chessboard" class="clear">
+
 	</section>
 	<!-- 页面布局 -->
+	<div class="music"></div>
 	<section id="mask">
 		<aside class="conBox">
 			<h1 class="borderBot">请选择棋盘规格！</h1>
@@ -207,6 +238,8 @@
 		let submitBtn = document.getElementById('submitBtn');
 		//创建棋盘
 	 // 当点击确认的时候。棋盘格子出现
+			//创建棋盘
+	 // 当点击确认的时候。棋盘格子出现
 		submitBtn.onclick=function(){
 			var chessMaxNum = lineNum * lineNum;  //行*列
 			var chessWH = 90/lineNum;
@@ -227,7 +260,7 @@
 		 }
 
 		 // 控制+ —按钮  棋盘格局为 6-15
-		  subBtn.onclick = function(){
+		 subBtn.onclick = function(){
 				if ( lineNum > 6 ) {
 					lineNum--;
 				}
@@ -239,6 +272,7 @@
 				}
 				gridNum.innerHTML = lineNum;
 			}
+
 		//棋子对象
 			function Chess(){
 				this.color = 'white';  //棋子初始颜色为白色
@@ -261,18 +295,44 @@
 					judge(whiteChess,'白子');
 					judge(blackChess,'黑子');
 					// 判断获胜条件
-					// 最先在棋盘横向、竖向、斜向形成连续的相同色五个棋子的一方为胜。
-					// 黑棋禁手判负，白棋无禁手。黑棋禁手包括“三、三”(包括“四、三、三”)、“四、四”(包括“四、四、三”)、“长连”。黑棋只能以“四、三”取胜。
+				// 最先在棋盘横向、竖向、斜向形成连续的相同色五个棋子的一方为胜。
+				// 黑棋禁手判负，白棋无禁手。黑棋禁手包括“三、三”(包括“四、三、三”)、“四、四”(包括“四、四、三”)、“长连”。黑棋只能以“四、三”取胜。
 					// 判断四子
-					//判断规则不清晰
 					function judge(che,color){
 						for (var i = 0;i < che.length;i++) {
 							var x = che[i]%lineNum;
 							var y = parseInt(che[i]/lineNum);
-							
+							if ( x <= lineNum - 5 && y <= lineNum - 5 && che[i] != 0 ) {
+								if( che[i+1*lineNum+1] != 0 && che[i+2*lineNum+2] != 0 && che[i+3*lineNum+3] != 0 && che[i+4*lineNum+4] != 0 ){
+									alert(color+'获胜!');
+									location.replace(location);
+									return true;
+								}
+							};
+							if ( y <= lineNum - 5 && che[i] != 0 ) {
+								if( che[i+1*lineNum] != 0 && che[i+2*lineNum] != 0 && che[i+3*lineNum] != 0 && che[i+4*lineNum] != 0 ){
+									alert(color+'获胜!');
+									location.replace(location);
+									return true;
+								}
+							};
+							if ( x >= 4 && y <= lineNum - 5 && che[i] != 0 ) {
+								if( che[i+1*lineNum-1] != 0 && che[i+2*lineNum-2] != 0 && che[i+3*lineNum-3] != 0 && che[i+4*lineNum-4] != 0 ){
+									alert(color+'获胜!');
+									location.replace(location);
+									return true;
+								}
+							};
+							if ( x <= lineNum - 5 && che[i] != 0 ) {
+								if( che[i+1] != 0 && che[i+2] != 0 && che[i+3] != 0 && che[i+4] != 0 ){
+									alert(color+'获胜!');
+									location.replace(location);
+									return true;
+								}
+							};
 						};
-					}
-				}
+					}				}
+				
 			} 
 			//点击格子开始下棋
 			function playChess(i){
@@ -289,6 +349,7 @@
 			}
 			
 		};
+
 
 
 </script>

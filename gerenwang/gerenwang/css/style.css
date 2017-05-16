@@ -114,13 +114,13 @@ ul.social-in li  i.youtube:hover{
 	transition: transform 0.3s, opacity 0.3s;
 	pointer-events: none;
 }
-/*.top-nav ul li a:hover::before,
+.top-nav ul li a:hover::before,
 .top-nav ul li a:focus::before {
 	-webkit-transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
 	-moz-transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
 	transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
 	opacity: 1;
-}*/
+}
 .top-nav ul li a:hover{
 	color: red;
 }
