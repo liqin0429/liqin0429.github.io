@@ -656,8 +656,8 @@ h2.resp-accordion {
 /*--//slider-up-arrow--*/
 /*---- responsive-design -----*/
 @media(max-width:1366px){
-.about,.work,.education,.skills,.portfolio,.contact {
-    padding: 5em 0;
+.about,.work,.skills,.portfolio,.contact {
+    /*padding: 5em 0;*/
 }
 .work-right.work-right2 {
     min-height: 200px;
