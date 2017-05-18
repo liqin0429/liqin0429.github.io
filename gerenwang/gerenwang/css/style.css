@@ -385,13 +385,14 @@ p.date{
 	float:left;
 }
 a.only{
-	float:right;
-	text-decoration:underline;
-	font-size:1em;
-	color:#B5B5B5;
+	float: right;
+    /* text-decoration: underline; */
+    font-size: 2em;
+    color: #c72408;
 }
 a.only:hover{
-	text-decoration:none;
+	margin-right: 30px;
+	  text-decoration: none; 
 }
 .award-bottom input[type="text"],.award-bottom input[type="password"]{
 	padding:14px;

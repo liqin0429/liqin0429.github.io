@@ -166,6 +166,6 @@
                 },1000)
             }
         }
-        let wuyi=new Date(2017,4,1,0,0,0)   
+        let wuyi=new Date(2017,8,1,0,0,0)   
         let wydjs1=new djs(dh,dm,ds,wuyi);
         wydjs1.play();

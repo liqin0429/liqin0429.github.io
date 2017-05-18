@@ -45,7 +45,7 @@ body a:hover{
 }
 .banner-info{
 	background: url(../images/dott.png)repeat 0px 0px;
-	padding: 13em 0;
+	padding: 9em 0;
 }
 .header-left img {
     width: 100%;
@@ -148,6 +148,9 @@ h3.title {
     border-bottom: 4px double rgba(247, 197, 106, 0.35);
     padding-bottom: 0.2em;
     margin-bottom: 1em;
+}
+.tab-1 .resp-tab-content .resp-tab-content-active{
+    height: 100%;
 }
 p {
    font-size: 1.1em;

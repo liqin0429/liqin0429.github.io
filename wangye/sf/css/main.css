@@ -589,6 +589,11 @@ h5{
 .app-block-element .app-block-over .app-block-detail {
     display: block;
     text-align: center;
+    display: block;
+    text-align: center;
+    position: absolute;
+    top: 149px;
+    left: 40px;
 }
 h5{
     margin-top: 10px;
