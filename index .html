@@ -13,8 +13,6 @@
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/jquery.fullPage.min.js"></script>
     <script src="js/easyResponsiveTabs.js">
-
-
     </script>
     <!--//end-smooth-scrolling-->
     <script src="js/jquery.fullPage.js"></script>
@@ -31,12 +29,16 @@
                 'navigationPosition': 'right',
                 'navigationTooltips': ['主页', '自我介绍','工作经验', '作品展示', '联系我们'],
 
-                // afterLoad: function (anchorLink, index, event) {
-                //     $(".scroll").click(function (anchorLink, index, event) {
-                //         $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
-                //     });
-                // },
-                 afterLoad: function (anchorLink, index) {
+                afterLoad: function (an, index) {
+                if (index == 3) {
+                    $(".index .header-left").removeClass("leftOut").addClass("leftIn")
+                    $(".index3 .header-left right").css({right: 100});
+                } else if (index == 5) {
+                    $(".next").css("transform", "rotate(-90deg)")
+                }
+            },
+
+                 onleave: function (anchorLink, index) {
                     $(document).ready(function () {
                         $('#horizontalTab').easyResponsiveTabs({
                             type: 'default',
@@ -45,7 +47,7 @@
                         });
                     });
                     $(".swipebox").swipebox();
-                    $(".resp-tab-item").removeClass(".resp-tab-active");
+                    // $(".resp-tab-item").removeClass(".resp-tab-active");
 
                 }
             })

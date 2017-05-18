@@ -1202,3 +1202,27 @@ a {
     padding-bottom: .5em;
     margin-bottom: 1.5em;
 }
+
+@keyframes leftIn {
+    0% {
+        left: 100px;
+    }
+    100% {
+        left: -300px;
+    }
+}
+@keyframes leftOut {
+    0% {
+        right: 100px;
+    }
+    100% {
+        right: -300px;
+    }
+}
+.leftOut {
+    animation: leftOut 1s ease-in forwards;
+}
+
+.active .leftIn {
+    animation: leftIn 1s ease-in forwards;
+}
