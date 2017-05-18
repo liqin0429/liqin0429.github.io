@@ -138,7 +138,7 @@ ul.nav.navbar li a:hover,ul.nav.navbar li a.active,ul.nav.navbar li a:focus{
 }
 /*--//top-nav--*/
 /*--about--*/
-.about,.work,.education,.skills,.contact{
+.about,.work,.skills,.contact{
 	padding:6em 0;
 }
 h3.title {
@@ -680,7 +680,7 @@ ul.address li ul.address-text li {
     margin-top: 0.8em;
 }
 .about, .work, .education, .skills, .portfolio, .contact {
-    padding: 1em 0;
+    padding: 2em 0;
   
 }
 h3.title {
