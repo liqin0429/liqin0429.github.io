@@ -29,14 +29,14 @@
                 'navigationPosition': 'left',
                 'navigationTooltips': ['主页', '自我介绍','工作经验', '作品展示', '联系我们'],
 
-            //     afterLoad: function (an, index) {
-            //     if (index == 3) {
-            //         $(".index .header-left").removeClass("leftOut").addClass("leftIn")
-            //         $(".index .header-right").css({right: 100});
-            //     } else if (index == 5) {
-            //         $(".next").css("transform", "rotate(-90deg)")
-            //     }
-            // },
+                afterLoad: function (an, index) {
+                if (index == 1) {
+                    $(".index .header-left").removeClass("leftOut").addClass("leftIn")
+                    $(".index .header-right").css({right: 100});
+                } else if (index == 5) {
+                    $(".next").css("transform", "rotate(-90deg)")
+                }
+            },
 
                    afterLoad: function (anchorLink, index) {
                     $(document).ready(function () {
