@@ -145,7 +145,7 @@ html, body {
      width: 10px;
     height: 10px;
     background: red;
-    /*border: 2px solid #fff;*/
+    border: 2px solid red;
 }
 #fp-nav ul li a span,
 .fp-slidesNav ul li a span {
