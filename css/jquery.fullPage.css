@@ -142,8 +142,8 @@ html, body {
 }
 #fp-nav ul li a.active span,
 .fp-slidesNav ul li a.active span {
-     width: 11px;
-    height: 11px;
+     width: 8px;
+    height: 8px;
     background: red;
     border: #fff;
 }
