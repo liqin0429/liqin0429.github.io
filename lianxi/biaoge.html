@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        table {
+            width: 500px;
+            height: auto;
+            margin: 0 auto;
+            border-collapse: collapse;
+            /*合并边框*/
+            text-align: center;
+        }
+
+        input[value="+"], input[value="-"] {
+            width: 50px;
+            height: 20px;
+            display: block;
+            margin: 10px auto;
+        }
+
+        table tbody tr {
+            height: 30px;
+        }
+
+        table tbody tr td input {
+            border: 0;
+            width: 100%;
+            height: 30px;
+            color: red;
+            text-align: center;
+        }
+
+        td, th {
+            border-bottom: 10px;
+        }
+
+        .add {
+            cursor: pointer;
+        }
+
+        .del {
+            cursor: pointer;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<!-- 创建表格 -->
+<table border="1" cellspacing="0">    <!--  表格-->
+    <thead>    <!-- 表头 -->
+    <tr>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>学号</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td contenteditable="true">张三</td>
+        <td contenteditable="true">1</td>
+        <td contenteditable="true">90</td>
+        <td class="del">删除</td>
+    </tr>
+    </tbody>
+    <tfoot> <!-- 表未 -->
+    <tr>
+        <td class='add' colspan="4">+</td> <!--合并单元格-->
+    </tr>
+    </tfoot>
+</table>
+</body>
+<script>
+    var add = document.querySelector(".add");
+    var tbody = document.querySelector("tbody");
+//    增加表格
+    add.onclick = function () {
+        var newtr = document.createElement("tr");
+        newtr.innerHTML =
+            "<td contenteditable='true'></td>" +
+            "<td contenteditable='true'></td>" +
+            "<td contenteditable='true'></td>" +
+            "<td   class='del'>删除</td>";
+        tbody.appendChild(newtr);
+    }
+    //移除表格
+    tbody.onclick = function (e) {
+        var target = e.target;
+        if (e.target.className == "del") {
+            this.removeChild(target.parentNode);     // parentNode 获得父节点引用
+                            // removeChild() 方法用来删除父节点的一个子节点。
+        }
+    }
+
+</script>
+</html>

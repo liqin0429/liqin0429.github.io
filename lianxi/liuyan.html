@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>留言板字数限制</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		.liuyanban{
+			width: 800px;
+			height: 300px;
+			border: 2px solid red;
+			margin: 0 auto;
+		}
+		.liuyanban textarea{
+			width: 800px;
+			height: 300px;
+			resize:none;		 /*不让其拖动放大缩小*/
+		}
+		.liuyanban input[type=button]{	/*将按钮向右浮动*/
+			float: right;
+		}
+		.con{
+			width: 800px;
+			margin: 0 auto;
+		}
+		.con ul{
+			display: flex;
+			flex-direction:column-reverse;		/*竖直反向排*/
+		}
+		.con ul li{
+			border: 1px dashed #000;
+			margin-bottom: 5px;
+		}
+		.tishi{
+			font-size: 15px;
+			color: #666;
+			text-align: center;
+			clear: right;		/*不让右边有浮动的元素*/
+		}
+		.this span,.this b{
+			color: orange;
+		}
+	</style>
+</head>
+<body>
+	<div class="liuyanban">
+		<textarea name="" id="" cols="30" rows="10" placeholder="请输入留言"></textarea>
+		<input type="button" value="提交">
+		<div class="tishi">可以输入100个字，
+			已输入<span>0</span>个字，
+			还可以输入<b>100</b>个字
+		</div>
+		<div class="con">	<!-- 下拉列表 -->
+			<ul></ul>
+		</div>
+	</div>
+	<script src='function.js'></script>
+	<script>
+		$(function(){
+			const textarea=$(".liuyanban textarea")[0];
+			const btn=$(".liuyanban input[type=button]")[0];
+			const con=$(".con ul")[0];
+			const ys=$(".tishi span")[0];
+			const ks=$(".tishi b")[0];
+			const znum =100;
+			// 创建li textarea文本框
+			textarea.onkeydown=btn.onclick=function(e){
+				// 设置提示   回车和空格
+				if(e.type=="click"||(e.keyCode==13&&e.ctrlKey)){
+					let text=textarea.value;
+					if(text.trim()==""){
+						textarea.value="";
+						ys.innerHTML=0;			//已经输入的字数
+						ks.innerHTML=znum;		//可以输入的字数
+						return;  //终止函数执行
+					}
+					textarea.value="";
+					let li =$("<li>");
+					li.innerHTML=text;
+					con.appendChild(li);	//将某些元素添加到父元素称得上
+					ys.innerHTML=0;
+					ks.innerHTML=znum;
+				}
+			}	
+				// 设置内容改变，支持空格
+				textarea.oninput=function(){
+					let text=textarea.value;
+					let len=text.length;
+					if(len>100){
+						text=text.substr(0,100);	//截取
+						textarea.value=text;
+						len=100;	//输入字的长度
+					}
+					ys.innerHTML=len;
+					ks.innerHTML=znum-len;
+				}
+		})
+
+
+	</script>
+</body>
+</html>
