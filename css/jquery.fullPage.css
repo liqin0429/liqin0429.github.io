@@ -142,7 +142,10 @@ html, body {
 }
 #fp-nav ul li a.active span,
 .fp-slidesNav ul li a.active span {
-    background: #333;
+     width: 11px;
+    height: 11px;
+    background: red;
+    border: #fff;
 }
 #fp-nav ul li a span,
 .fp-slidesNav ul li a span {

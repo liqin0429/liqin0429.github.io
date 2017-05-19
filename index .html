@@ -26,19 +26,19 @@
                 'sectionsColor': ['#fff', '#fff', '#f1f1f1','#f2f2f2' ,'#252424'],
                  anchors: ['page1', 'page2', 'page3', 'page4','page5'],
                 'navigation': true,
-                'navigationPosition': 'right',
+                'navigationPosition': 'left',
                 'navigationTooltips': ['主页', '自我介绍','工作经验', '作品展示', '联系我们'],
 
-                afterLoad: function (an, index) {
-                if (index == 3) {
-                    $(".index .header-left").removeClass("leftOut").addClass("leftIn")
-                    $(".index3 .header-left right").css({right: 100});
-                } else if (index == 5) {
-                    $(".next").css("transform", "rotate(-90deg)")
-                }
-            },
+            //     afterLoad: function (an, index) {
+            //     if (index == 3) {
+            //         $(".index .header-left").removeClass("leftOut").addClass("leftIn")
+            //         $(".index .header-right").css({right: 100});
+            //     } else if (index == 5) {
+            //         $(".next").css("transform", "rotate(-90deg)")
+            //     }
+            // },
 
-                 onleave: function (anchorLink, index) {
+                   afterLoad: function (anchorLink, index) {
                     $(document).ready(function () {
                         $('#horizontalTab').easyResponsiveTabs({
                             type: 'default',
@@ -64,8 +64,10 @@
         <div id="home" class="banner">
             <div class="banner-info">
                 <div class="container">
-                    <div class="col-md-3 header-left">
+                    <div class="col-md-4 header-left">
                         <img src="images/BNN9.jpg" alt=""/>
+                    </div>
+                    <div class="col-md-2 header-left">
                     </div>
                     <div class="col-md-6 header-right">
                         <h2>Hello</h2>
@@ -104,12 +106,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-md-3 header-left">
-                        <img src="images/672.jpg" alt=""/>
-                    </div>
-                    <div class="col-md-3 header-left">
-                        <img src="images/35.jpg" alt=""/>
-                    </div>
+                    
                     <div class="clearfix"></div>
                 </div>
             </div>
