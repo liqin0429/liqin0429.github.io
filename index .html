@@ -33,9 +33,10 @@
                 if (index == 1) {
                     $(".index .header-left").removeClass("leftOut").addClass("leftIn")
                     $(".index .header-right").css({right: 100});
-                } else if (index == 5) {
-                    $(".next").css("transform", "rotate(-90deg)")
-                }
+                } 
+                // else if (index == 5) {
+                //     $("#toTop").css("top", 0)
+                // }
             },
 
                    afterLoad: function (anchorLink, index) {
@@ -64,12 +65,12 @@
         <div id="home" class="banner">
             <div class="banner-info">
                 <div class="container">
-                    <div class="col-md-4 header-left">
+                    <div class="col-md-4 header-left leftOut">
                         <img src="images/BNN9.jpg" alt=""/>
                     </div>
                     <div class="col-md-2 header-left">
                     </div>
-                    <div class="col-md-6 header-right">
+                    <div class="col-md-6 header-right leftIn">
                         <h2>Hello</h2>
                         <h1>欢迎来到我的个人主页</h1>
                         <h6>Welcome to my personal homepage</h6>
@@ -629,10 +630,5 @@
 
 <!--//education-->
 </body>
-<script type="text/javascript">
-        $(document).ready(function() {
-           
-            
-        });
-    </script>
+
 </html>

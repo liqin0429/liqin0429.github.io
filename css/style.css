@@ -777,7 +777,7 @@ h3.title {
     margin-right: -6.4em;
 }
 .work-right.work-right2 {
-    min-height: 220px;
+    min-height: 163px;
 }
 .bar-grids {
     padding: 0 2em;
@@ -1205,18 +1205,18 @@ a {
 
 @keyframes leftIn {
     0% {
-        left: 100px;
+        left: 300px;
     }
     100% {
-        left: -300px;
+        left: -100px;
     }
 }
 @keyframes leftOut {
     0% {
-        right: 100px;
+        right: 300px;
     }
     100% {
-        right: -300px;
+        right: -50px;
     }
 }
 .leftOut {
